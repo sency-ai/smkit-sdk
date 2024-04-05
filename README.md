@@ -28,4 +28,4 @@ Choose your platform:
 
 -------
 
-For any questions, please contact: contact@sency.ai
+For any questions, please contact us: contact@sency.ai
