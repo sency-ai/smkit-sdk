@@ -2,7 +2,7 @@
 
 ## AI Human Motion Tracking
 
-![Cover Sency](https://github.com/sency-ai/SMKitUI-SDK/assets/166028195/838b0a04-6c7a-469b-b14c-516e4a4037a6)
+![Cover Sency](https://github.com/sency-ai/smkit-sdk/assets/166028195/7bba0525-4368-4c38-b840-63744538e228)
 
 ### In just a few lines of code, you can leverage your app using cutting-edge AI-based technology.
 
@@ -10,7 +10,7 @@ By integrating one of SencyMotion SDKs into your products, you will open endless
 
 ------------------
 
-https://github.com/sency-ai/SMKitUI-SDK/assets/166028195/9547354a-2a5a-4fef-9504-95e9a9ee61e9
+https://github.com/sency-ai/smkit-sdk/assets/166028195/97c059d2-19ac-4459-8a97-c371f2bf48e7
 
 ------------------
 
