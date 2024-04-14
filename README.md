@@ -64,7 +64,7 @@ For further assistance, refer to our comprehensive [FAQ](#faq) or [contact](mail
    We prioritize user data privacy and adhere to stringent security protocols compliant with international data protection regulations. For more details, refer to our Data Privacy Policy.
 
 3. **What is the cost of using this SDK?**
-   Sency offers various pricing tiers depending on usage levels and additional features. For a detailed pricing breakdown, please visit our [pricing]((https://www.sency.ai/pricing) page or contact sales for more information.
+   Sency offers various pricing tiers depending on usage levels and additional features. For a detailed pricing breakdown, please visit our [pricing](https://www.sency.ai/pricing) page or contact sales for more information.
 
 4. **Is there support available for SDK integration?**
    Yes, we provide comprehensive support for SDK integration. You can reach our technical support team via email, phone, or through our dedicated support portal.
