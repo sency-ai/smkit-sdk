@@ -19,14 +19,12 @@ https://github.com/sency-ai/smkit-sdk/assets/166028195/97c059d2-19ac-4459-8a97-c
 - [Choose Your Platform](#choose-your-platform)
 - [Support and Resources](#support-and-resources)
 
-<b name="getting-started"></b>
-## Getting Started
+## Getting Started <a name="getting-started"></a>
 
 #### To get started [Register](https://www.sency.ai/pricing) now a new client for free and get your demo access and your api client key.
 #### Then, [choose](#choose-your-platform) the most relevant SDK for you, make sure you meet the prerequisites, and follow the setup instructions to incorporate our tools into your project seamlessly.
 
-<b name="choose-your-platform"></b>
-## Choose Your Platform
+## Choose Your Platform <a name="choose-your-platform"></a>
 
 ### UI Kit
 
@@ -51,14 +49,13 @@ The Base Kit is designed for those who prefer a hands-on approach. It does not i
 
 Your platform is missing? [Let us know](mailto:support@sency.ai) and we'll get back to you with our plans as soon as we can.
 
-<b name="support-and-resources"></b>
-## Support and Resources
+## Support and Resources <a name="support-and-resources"></a>
 
 For further assistance, refer to our comprehensive [FAQ](#faq) or [contact](mailto:support@sency.ai) our support team. 
 
 ----------------
-<b name="faq"></b>
-## FAQ
+
+## FAQ <a name="faq"></a>
 
 
 1. **How do I obtain the API authentication key?**
