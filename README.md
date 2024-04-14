@@ -19,7 +19,7 @@ https://github.com/sency-ai/smkit-sdk/assets/166028195/97c059d2-19ac-4459-8a97-c
 - [Choose Your Platform](#choose-your-platform)
 - [Support and Resources](#support-and-resources)
 
-<b name="getting-started"></b>
+<a name="getting-started"></a>
 ## Getting Started
 
 #### To get started [Register](https://www.sency.ai/pricing) now a new client for free and get your demo access and your api client key.
