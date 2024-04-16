@@ -25,19 +25,19 @@ https://github.com/sency-ai/smkit-sdk/assets/166028195/97c059d2-19ac-4459-8a97-c
 
 ## Choose Your Platform <a name="choose-your-platform"></a>
 
-### UI Kit
+### Branded Kit
 
 **Who is this for?** Ideal for stakeholders who need a quick, low-code solution.
 
-The UI Kit offers a rapid deployment model where the entire user interface and experience are pre-designed by us. This kit allows you to leverage our complete UI with minimal coding effort, enabling you to focus on swift implementation.
+The *Branded Kit* offers a rapid deployment model where the entire user interface and experience are ready to use. Seemlessly plug it as a **white label** with **your brand** in your app. This kit allows you to leverage our complete UI with minimal coding effort, enabling you to focus on swift implementation.
 
-### Base Kit
+### Custom Kit
 
 **Who is this for?** Best suited for developers looking to build and customize their own experiences.
 
-The Base Kit is designed for those who prefer a hands-on approach. It does not include any predefined UI, providing a clean slate for thorough customization and personalization. This option requires more coding but offers greater flexibility and control over the integration process.
+The *Custom Kit* is designed for those who prefer a hands-on approach. It does not include any predefined UI, providing a clean slate for thorough customization and personalization. This option requires more coding but offers greater flexibility and control over the integration process.
 
-| Platform | UI kit | Base kit |
+| Platform | Branded kit | Custom kit |
 |-------------------|-------------------|-------------------|
 | **iOS** | [SMKitUI](https://github.com/sency-ai/smkit-ui-ios-demo/tree/main) | [SMKit](https://github.com/sency-ai/smkit-ios-demo/tree/main) |
 | **Android** | [smkit-ui](https://github.com/sency-ai/smkit-ui-android-demo) | [smkit](https://github.com/sency-ai/smkit-android-demo) |
