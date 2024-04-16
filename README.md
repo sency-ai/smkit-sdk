@@ -29,7 +29,7 @@ https://github.com/sency-ai/smkit-sdk/assets/166028195/97c059d2-19ac-4459-8a97-c
 
 **Who is this for?** Ideal for stakeholders who need a quick, low-code solution.
 
-The *Branded Kit* offers a rapid deployment model where the entire user interface and experience are pre-designed by us and can be used seemlessly as a *white label* in your app. This kit allows you to leverage our complete UI with minimal coding effort, enabling you to focus on swift implementation.
+The *Branded Kit* offers a rapid deployment model where the entire user interface and experience are ready to use. Seemlessly plug it as a **white label** with **your brand** in your app. This kit allows you to leverage our complete UI with minimal coding effort, enabling you to focus on swift implementation.
 
 ### Custom Kit
 
