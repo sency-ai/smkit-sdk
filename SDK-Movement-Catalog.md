@@ -37,6 +37,7 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Shoulder Press                | ShouldersPress                 | Shoulder press exercise.                               |
 | Side Step Jacks               | SideStepJacks                  | Side step with a jumping jack motion.                  |
 
+
 ## Static Exercise Types
 
 | Movement                      | SDK String                     | Description                            |
