@@ -19,12 +19,9 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Lunge Jump                    | LungeJump                      | Dynamic lunge with a jump.                             |
 | Side Lunge                    | LungeSide                      | Side lunge for inner thighs.                           |
 | Mountain Climber Plank        | PlankMountainClimber           | Cardio exercise in plank position.                     |
-| High Knee to Elbow Plank      | PlankHighKneeToElbow           | Plank variation bringing knees to elbows.              |
 | Shoulder Taps Plank           | PlankHighShoulderTaps          | Plank variation with shoulder taps.                    |
 | Push-up                       | PushupRegular                  | Standard push-up.                                      |
 | Reverse Sit to Table Top      | ReverseSitToTableTop           | Core exercise moving from sit to tabletop position.    |
-| Russian Twist                 | SitupRussianTwist              | Core exercise with twisting motion.                    |
-| Sit-up Penguin                | SitupPenguin                   | Ab exercise involving side-to-side motions.            |
 | Skater Hops                   | SkaterHops                     | Skater-like lateral hops.                              |
 | Ski Jumps                     | SkiJumps                       | Side-to-side ski-like jumps.                           |
 | Air Squat                     | SquatRegular                   | Standard squat.                                        |
@@ -39,24 +36,17 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Step Reverse Air Fly          | StandingStepReverseAirFly      | Dynamic step with a reverse fly.                       |
 | Shoulder Press                | ShouldersPress                 | Shoulder press exercise.                               |
 | Side Step Jacks               | SideStepJacks                  | Side step with a jumping jack motion.                  |
-| Sumo Squat Spread Hands       | SumoSquatSpreadHandsVariation  | Sumo squat with hands spread.                          |
-| Single Hand Overhead Heel Digs| SingleHandOverheadHealDigs     | One-handed overhead heel digs.                         |
 
 ## Static Exercise Types
 
 | Movement                      | SDK String                     | Description                            |
 | ----------------------------- | ------------------------------ | -------------------------------------- |
-| Bear Crawl                    | BearStatic                     | Static bear crawl position.            |
 | Handstand                     | HandStand                      | Static handstand.                      |
 | Side Plank                    | PlankSideLowStatic             | Static side low plank.                 |
-| Low Plank                     | PlankLowStatic                 | Static low plank.                      |
 | High Plank                    | PlankHighStatic                | Static high plank.                     |
-| Static Russian Twist          | SitupRussianTwistStatic        | Static sit-up with a twist.            |
-| Air Squat                     | SquatRegularStatic             | Static regular squat.                  |
+| Static Squat                     | SquatRegularStatic             | Static regular squat.                  |
 | Overhead Squat                | SquatRegularOverheadStatic     | Static squat with arms overhead.       |
 | Static Sumo Squat             | SquatSumoStatic                | Static sumo squat.                     |
-| Superman                      | BackSupermanStatic             | Static superman pose.                  |
-| Superman with Straight Arms   | BackSupermanStraightArmsStatic | Static superman with straight arms.    |
 | Static Lunge                  | LungeRegularStatic             | Static regular lunge.                  |
 | Tuck Hold                     | TuckHold                       | Static tuck hold position.             |
 
@@ -65,7 +55,6 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Movement                      | SDK String                     | Description                            |
 | ----------------------------- | ------------------------------ | -------------------------------------- |
 | Jefferson Curl                | JeffersonCurl                  | Jefferson curl exercise.               |
-| Jefferson Curl (Right)        | JeffersonCurlRight             | Jefferson curl on the right side.      |
 | Standing Knee Raise (Left)    | StandingKneeRaiseLeft          | Standing knee raise on the left side.  |
 | Standing Knee Raise (Right)   | StandingKneeRaiseRight         | Standing knee raise on the right side. |
 | Side Bend (Left)              | StandingSideBendLeft           | Standing side bend on the left side.   |
