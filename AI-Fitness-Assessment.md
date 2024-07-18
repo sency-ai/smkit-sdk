@@ -23,7 +23,7 @@ Our fitness assessment consists of the following four key exercises, each design
    - **Benefits**: Vital for evaluating core endurance and preventing injuries.
 
 ## Demo Video
-Watch our demo video to see the fitness assessment in action. *(Note: Video will be updated with the final version soon.)*
+Watch our [demo video](https://youtu.be/wBH6KIjDnSA) to see the fitness assessment in action. *(Note: Video will be updated with the final version soon.)*
 
 ## Added Value
 
