@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/7dfa188f-db3e-4a8a-bbb8-69ce3fae2915
 
 Our documentation provides a thorough overview of our models and tools, an introduction to our vision models, and detailed guidance on implementing the most common use cases and SDK functionalities. Even if you don't have a development background, you can still effectively implement our SDK.
 
-For those without programming experience, the Guides section of our documentation offers a clear understanding of our products. If you're interested in testing our models, assessments, or conducting a brief workout without writing any code, please email us at [contact@sency.ai](mailto:contact@sency.ai) and we’ll share with you access to our iOS demo app.
+If you’re interested in testing our models, assessments, or conducting a brief workout without writing any code, please email us at [contact@sency.ai](mailto:contact@sency.ai) and we’ll share with you access to our iOS demo app.
 
 ------------------
 
