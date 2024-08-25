@@ -1,15 +1,34 @@
-# [Sency Motion KIT SDK](https://www.sency.ai)
+# [Welcome to Sency.AI](https://www.sency.ai)
 
 ## AI Human Motion Tracking
 
 ![Cover Sency](https://github.com/sency-ai/smkit-sdk/assets/166028195/7bba0525-4368-4c38-b840-63744538e228)
 
-### In just a few lines of code, you can leverage your app using cutting-edge AI-based technology.
+### About Sency
+Sency is a trailblazer in the health and fitness industry, specializing in AI motion analysis technology that understands and enhances human movement through just a smartphone camera—no extra hardware needed. Our technology offers real-time guidance, personalized user journeys, and the benefits of personal coaching, empowering users to lead a more active, balanced, and healthy lifestyle. Trusted by top brands across various sectors, Sency's solutions drive significant improvements in user engagement, satisfaction, and business outcomes, proving our leadership and expertise in motion tracking technology.
 
-By integrating one of SencyMotion SDKs into your products, you will open endless opportunities that allow you to get meaningful insights and data at levels you could not get before. With state-of-the-art AI models and a seamless integration process, you can now significantly increase the value your apps are providing. Based on millions of data points and combined expert knowledge, move to data-driven personalizations, and real-time interaction to increase user motivation and allow your users to achieve their physical goals safer and faster.
+### In just a few lines of code, you can leverage your app using cutting-edge AI-based technology. 
+
+Integrate SencyMotion SDKs to unlock a world of opportunities for deep insights and unprecedented data access. Our state-of-the-art AI models and seamless integration process elevate your app’s value through:
+* **Data-driven Personalization:** Tailor experiences with real-time interactions that boost user motivation and safety.
+* **Enhanced User Engagement:** Improve health outcomes and increase retention and conversion rates with personalized exercise and health plans based on accurate, real-time data.
+
+AI motion tracking by Sency is ideal for fitness, wellness, and health enterprises looking to revolutionize their digital platforms. At the heart of our offerings is the Sency SDK, a comprehensive suite that allows businesses to implement sophisticated motion tracking and analysis capabilities swiftly and effectively. 
+Features include:
+* **Initial Movement and Fitness Assessments:** Get started with detailed evaluations.
+* **User Progress Evaluations:** Track improvements with regular monthly assessments.
+* **Personalized Workout Plans:** Offer tailored guidance and technique corrections.
+
+Designed for effortless integration into any mobile or web application, our SDK ensures businesses can provide expert-level fitness guidance tailored to each user’s needs.
 
 
 https://github.com/user-attachments/assets/7dfa188f-db3e-4a8a-bbb8-69ce3fae2915
+
+## Who’s this documentation for?
+
+Our documentation provides a thorough overview of our models and tools, an introduction to our vision models, and detailed guidance on implementing the most common use cases and SDK functionalities. Even if you don't have a development background, you can still effectively implement our SDK.
+
+For those without programming experience, the Guides section of our documentation offers a clear understanding of our products. If you're interested in testing our models, assessments, or conducting a brief workout without writing any code, please email us at [contact@sency.ai](mailto:contact@sency.ai) and we’ll share with you access to our iOS demo app.
 
 ------------------
 
