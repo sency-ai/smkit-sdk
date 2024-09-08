@@ -12,12 +12,12 @@ Our Cardio Assessment incorporates high-intensity plyometric exercises to simula
 Jumping Jacks and Ski Jumps: These plyometric exercises are chosen for their ability to rapidly increase heart rate and challenge the body's aerobic capacity. 
 The assessment includes a series of increasing repetitions over a three-minute window, testing the body's response to escalating physical demands.
 
-20 seconds: jumping jacks\
-20 seconds: ski jumps\
-30 seconds: jumping jacks\
-30 seconds: ski jumps\
-40 seconds: jumping jacks\
-40 seconds: ski jumps
+20 seconds: Max jumping jacks\
+20 seconds: Max ski jumps\
+30 seconds: Max jumping jacks\
+30 seconds: Max ski jumps\
+40 seconds: Max jumping jacks\
+40 seconds: Max ski jumps
 
 Scoring System:
 Participants are scored based on the total number of repetitions they can complete within the timeframe, adjusted for age-related cardiovascular capacity (feel free to reach out and ask for more info about the scoring).
