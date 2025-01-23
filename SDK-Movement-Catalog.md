@@ -6,23 +6,23 @@ This document provides a comprehensive list of supported movements in our SDK. E
 
 | Movement                      | SDK String                     | Description                                                    | video exist |
 | ----------------------------- | ------------------------------ | -------------------------------------------------------------- | ----------- |
-| Alternate Windmill Toe Touch  | AlternateWindmillToeTouch      | Alternating windmill toe touches.                              |             |
-| Burpees                       | Burpees                        | Full-body exercise involving a squat, jump, and push-up.       |             |
-| Crunches                      | Crunches                       | Abdominal exercise targeting the core.                         |             |
+| Alternate Windmill Toe Touch  | AlternateWindmillToeTouch      | Alternating windmill toe touches.                              |      ✓      |
+| Burpees                       | Burpees                        | Full-body exercise involving a squat, jump, and push-up.       |      ✓      |
+| Crunches                      | Crunches                       | Abdominal exercise targeting the core.                         |      ✓      |
 | Froggers                      | Froggers                       | Dynamic exercise similar to burpees but with a frog-like jump. |             |
 | Glute Bridge                  | GlutesBridge                   | Exercise targeting the glute muscles.                          |      ✓      |
 | High Knees                    | HighKnees                      | Cardio exercise with high knee lifts.                          |      ✓      |
 | Jumping Jacks                 | JumpingJacks                   | Full-body cardio exercise.                                     |      ✓      |
-| Jumps                         | Jumps                          | General jumping exercises.                                     |             |
+| Jumps                         | Jumps                          | General jumping exercises.                                     |      ✓      |
 | Lateral Raises                | LateralRaises                  | Exercise focusing on the shoulder muscles.                     |             |
-| Lunge                         | Lunge                          | Basic lunge movement.                                          |             |
+| Lunge                         | Lunge                          | Basic lunge movement.                                          |      ✓      |
 | Lunge Jump                    | LungeJump                      | Dynamic lunge with a jump.                                     |             |
-| Side Lunge                    | LungeSide                      | Side lunge for inner thighs.                                   |             |
+| Side Lunge                    | LungeSide                      | Side lunge for inner thighs.                                   |      ✓      |
 | Mountain Climber Plank        | PlankMountainClimber           | Cardio exercise in plank position.                             |             |
 | Shoulder Taps Plank           | PlankHighShoulderTaps          | Plank variation with shoulder taps.                            |      ✓      |
 | Push-up                       | PushupRegular                  | Standard push-up.                                              |      ✓      |
-| Reverse Sit to Table Top      | ReverseSitToTableTop           | Core exercise moving from sit to tabletop position.            |             |
-| Skater Hops                   | SkaterHops                     | Skater-like lateral hops.                                      |             |
+| Reverse Sit to Table Top      | ReverseSitToTableTop           | Core exercise moving from sit to tabletop position.            |      ✓      |
+| Skater Hops                   | SkaterHops                     | Skater-like lateral hops.                                      |      ✓      |
 | Ski Jumps                     | SkiJumps                       | Side-to-side ski-like jumps.                                   |      ✓      |
 | Air Squat                     | SquatRegular                   | Standard squat.                                                |      ✓      |
 | Rotation Jab Squat            | SquatAndRotationJab            | Squat with a rotational jab.                                   |             |
@@ -30,11 +30,11 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Jump Squat                    | SquatJump                      | Squat with a jump.                                             |             |
 | Side Squat                    | SquatSide                      | Side squat.                                                    |             |
 | Sumo Squat                    | SquatSumo                      | Wide-stance squat.                                             |             |
-| Standing Alternate Toe Touch  | StandingAlternateToeTouch      | Alternating toe touches while standing.                        |             |
-| Bicycle Crunches              | StandingBicycleCrunches        | Bicycle crunches performed standing up.                        |             |
-| Oblique Crunches              | StandingObliqueCrunches        | Oblique crunches performed standing up.                        |             |
+| Standing Alternate Toe Touch  | StandingAlternateToeTouch      | Alternating toe touches while standing.                        |      ✓      |
+| Bicycle Crunches              | StandingBicycleCrunches        | Bicycle crunches performed standing up.                        |      ✓      |
+| Oblique Crunches              | StandingObliqueCrunches        | Oblique crunches performed standing up.                        |      ✓      |
 | Step Reverse Air Fly          | StandingStepReverseAirFly      | Dynamic step with a reverse fly.                               |             |
-| Shoulder Press                | ShouldersPress                 | Shoulder press exercise.                                       |             |
+| Shoulder Press                | ShouldersPress                 | Shoulder press exercise.                                       |      ✓      |
 | Side Step Jacks               | SideStepJacks                  | Side step with a jumping jack motion.                          |             |
 
 
@@ -67,7 +67,8 @@ This document provides a comprehensive list of supported movements in our SDK. E
 | Hip External Rotation         | HipExternalRotationGlutesMobility | Hip external rotation and glutes mobility test. |              |
 | Hip Internal Rotation         | HipInternalRotationMobility    | Hip internal rotation mobility test.   |             |
 | Inner Thigh Mobility          | InnerThighMobility             | Inner thigh mobility test.             |             |
-| Hamstring Mobility            | HamstringMobility              | Hamstring mobility test.               |             |
+| Hamstring Mobility            | HamstringMobility              | Hamstring mobility test.               |      ✓      |
+| Standing Hamstring Mobility   | StandingHamstringMobility      | Hamstring mobility test.               |      ✓      |
 | Overhead Mobility             | OverheadMobility               | Overhead mobility test.                |             |
 | Pectoral Mobility             | PecsMobility                   | Pectoral muscles mobility test.        |             |
 
