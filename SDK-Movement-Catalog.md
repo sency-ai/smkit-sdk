@@ -3,20 +3,25 @@
 This catalog lists **every movement currently defined in the SDK** and the string you should pass to the API to enable it. It’s organized by category so developers and customer stakeholders can quickly find what’s supported and how to use it efficiently.
 
 ## How to read this
-- **Movement** — human-friendly name.
-- **SDK String** — the exact identifier to use when configuring the SDK.
-- **Description** — short guidance on form and intent (added where it wasn’t present in the CSV).
-- **Body Zone** — primary regions involved.
-- **Preferred View** — recommended camera orientation for best tracking (Front/Side).
-- **Video** — ✓ = instruction video available, ⏳ = coming soon.
+- **Movement** — human-friendly name.  
+- **SDK String** — the exact identifier to use when configuring the SDK.  
+- **Description** — short guidance on form and intent (added where it wasn’t present in the CSV).  
+- **Body Zone** — primary regions involved.  
+- **Preferred View** — recommended camera orientation for best tracking (Front/Side).  
+- **Video** — ✓ = instruction video available, ⏳ = coming soon.  
 
-> **Side notation.** Variants labeled *(left/right)* or with `Left/Right` in the SDK string are tracked per side. When relevant, create two sets (one per side) to capture balanced metrics.
+> **Side notation.** Variants labeled *(left/right)* or with `Left/Right` in the SDK string are tracked per side. When relevant, create two sets (one per side) to capture balanced metrics.  
+
+> **Rest and Cooldown detectors.**  
+> The SDK also supports **detectors of type `Rest`** and **`Cooldown`**.  
+> - `Rest` can be used to explicitly represent rest periods between active exercises, allowing the SDK to recognize and utilize these intervals in structured workout flows.  
+> - `Cooldown` can be used at the end of sessions to track passive or low-intensity phases, enabling smoother transitions and accurate session summaries.
 
 ## General capture recommendations
-- Keep the **full body in frame**; camera at ~hip to chest height, lens facing the user.
-- Stand **2–3 m** from the camera for standing movements; **1.5–2 m** for floor work.
-- Prefer **Front** view for bilateral/symmetry checks and **Side** view for hinge, push-up, and plank mechanics.
-- Use even lighting; avoid strong backlight.
+- Keep the **full body in frame**; camera at ~hip to chest height, lens facing the user.  
+- Stand **2–3 m** from the camera for standing movements; **1.5–2 m** for floor work.  
+- Prefer **Front** view for bilateral/symmetry checks and **Side** view for hinge, push-up, and plank mechanics.  
+- Use even lighting; avoid strong backlight.  
 
 ---
 
@@ -94,5 +99,14 @@ This catalog lists **every movement currently defined in the SDK** and the strin
 | Single leg Knee Raise (right) | StandingKneeRaiseRight | Standing hip flexion to ~90° on right leg support. | Hips/Groin | Front | ✓ |
 | Standing Side Bend | StandingSideBendLeft | Standing lateral trunk flexion to the left/right side. | Abs, Obliques | Front | ✓ |
 | Standing Side Bend (right) | StandingSideBendRight | Standing lateral trunk flexion to the right. | Abs, Obliques | Front | ✓ |
+
+---
+
+## Utility / Meta Detectors
+
+| Movement | SDK String | Description | Body Zone | Preferred View | Video |
+| --- | --- | --- | --- | --- | --- |
+| Rest Period | Rest | Represents rest time between active exercises; allows structured workout pacing and recovery tracking. | — | — | — |
+| Cooldown | Cooldown | Marks post-session cooldown phase or low-intensity transition; helps produce accurate session summaries. | — | — | — |
 
 ---
