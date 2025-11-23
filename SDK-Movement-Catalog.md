@@ -57,10 +57,10 @@ This catalog lists **every movement currently defined in the SDK** and the strin
 | Skater Hops | SkaterHops | Lateral bounds with soft landings; trailing leg crosses behind. | Lower | Front | ✓ |
 | Ski Jumps | SkiJumps | Feet together side-to-side jumps; quick rebounds. | Lower | Front | ✓ |
 | Standing Alternate Toe Touch | StandingAlternateToeTouch | Alternating opposite hand-to-foot touches with slight twist. | Back, Lower | Front | ✓ |
-| Standing Bicycle Crunches | StandingBicycleCrunches | Alternating knee-to-opposite-elbow while standing. | Back, Lower | Front | ⏳ |
+| Standing Bicycle Crunches | StandingBicycleCrunches | Alternating knee-to-opposite-elbow while standing. | Back, Lower | Front | ✓ |
 | Standing Oblique Crunches | StandingObliqueCrunches | Drive knee to same-side elbow; avoid trunk collapse. | Lower, Abs | Front | ✓ |
 | Squat And Step | SquatAndStep | Squat then step laterally, alternating sides. | Lower | Front | ⏳ |
-| Quad Thoratic Rotation | QuadThoraticRotation | Quadruped thoracic rotation: hand behind head, rotate elbow to ceiling. | Back, Upper | Side | ⏳ |
+| Quad Thoratic Rotation | QuadThoraticRotation | Quadruped thoracic rotation: hand behind head, rotate elbow to ceiling. | Back, Upper | Side | ✓ |
 | Sumo Squat | SquatSumo | Wide-stance squat with toes slightly out; upright torso. | Lower | Front | ✓ |
 
 ---
@@ -86,15 +86,18 @@ This catalog lists **every movement currently defined in the SDK** and the strin
 
 | Movement | SDK String | Description | Body Zone | Preferred View | Video |
 | --- | --- | --- | --- | --- | --- |
-| Ankle Flexion (left) | AnkleMobilityLeft | Ankle dorsiflexion mobility (knee over toes) left side. | Lower (ankle) | Side | ⏳ |
-| Ankle Flexion (right) | AnkleMobilityRight | Ankle dorsiflexion mobility (knee over toes) right side. | Lower (ankle) | Side | ⏳ |
+| Ankle Flexion | AnkleMobilityLeft | Ankle dorsiflexion mobility (knee over toes) left side. | Lower (ankle) | Side | ✓ |
+| Ankle Flexion (right) | AnkleMobilityRight | Ankle dorsiflexion mobility (knee over toes) right side. | Lower (ankle) | Side | ✓ |
 | Hamstring (seated) | HamstringMobility | Seated forward fold assessing hamstring flexibility. | Posterior chain | Side | ✓ |
-| Hip external rotation (glutes) | HipExternalRotationGlutesMobility | Seated/figure-four style external rotation mobility. | Hips/Groin | Side | ⏳ |
-| Hip Flexion | HipFlexionMobility | Active hip flexion range test. | Hips/Groin | Side | ⏳ |
-| Hip internal rotation | HipInternalRotationMobility | Seated/internal rotation mobility test. | Hips/Groin | Side | ⏳ |
-| Inner thigh (butterfly sit) | InnerThighMobility | Seated butterfly stretch assessing groin flexibility. | Hips/Groin | Side | ⏳ |
-| Jefferson Curl | JeffersonCurlRight | Slow segmental spinal flexion; light weight only; control throughout. | Back, Hamstrings | Side | ✓ |
-| Shoulder Overhead | OverheadMobility | Active shoulder flexion overhead; keep ribs down. | Upper | Side | ⏳ |
+| Hip external rotation (glutes) (left) | HipExternalRotationLeft | Seated/figure-four style external rotation mobility. | Hips/Groin | Side | ✓ |
+| Hip external rotation (glutes) (right) | HipExternalRotationRight | Seated/figure-four style external rotation mobility. | Hips/Groin | Side | ✓ |
+| Hip Flexion | HipFlexionLeft | Active hip flexion range test. | Hips/Groin | Side | ✓ |
+| Hip Flexion (right) | HipFlexionRight | Active hip flexion range test. | Hips/Groin | Side | ✓ |
+| Hip internal rotation | HipInternalRotationLeft | Seated/internal rotation mobility test. | Hips/Groin | Side | ✓ |
+| Hip internal rotation (right) | HipInternalRotationRight | Seated/internal rotation mobility test. | Hips/Groin | Side | ✓ |
+| Inner thigh (butterfly sit) | InnerThighMobility | Seated butterfly stretch assessing groin flexibility. | Hips/Groin | Side | ✓ |
+| Jefferson Curl | JeffersonCurl | Slow segmental spinal flexion; light weight only; control throughout. | Back, Hamstrings | Side | ✓ |
+| Shoulder Overhead | OverheadMobility | Active shoulder flexion overhead; keep ribs down. | Upper | Side | ✓ |
 | Single leg Knee Raise | StandingKneeRaiseLeft | Standing hip flexion to ~90° on left leg support. | Hips/Groin | Front | ✓ |
 | Single leg Knee Raise (right) | StandingKneeRaiseRight | Standing hip flexion to ~90° on right leg support. | Hips/Groin | Front | ✓ |
 | Standing Side Bend | StandingSideBendLeft | Standing lateral trunk flexion to the left/right side. | Abs, Obliques | Front | ✓ |
