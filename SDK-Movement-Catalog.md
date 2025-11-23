@@ -59,7 +59,7 @@ This catalog lists **every movement currently defined in the SDK** and the strin
 | Standing Alternate Toe Touch | StandingAlternateToeTouch | Alternating opposite hand-to-foot touches with slight twist. | Back, Lower | Front | ✓ |
 | Standing Bicycle Crunches | StandingBicycleCrunches | Alternating knee-to-opposite-elbow while standing. | Back, Lower | Front | ✓ |
 | Standing Oblique Crunches | StandingObliqueCrunches | Drive knee to same-side elbow; avoid trunk collapse. | Lower, Abs | Front | ✓ |
-| Squat And Step | SquatAndStep | Squat then step laterally, alternating sides. | Lower | Front | ⏳ |
+| Squat And Step | SquatAndStep | Squat then step laterally, alternating sides. | Lower | Front | ✓ |
 | Quad Thoratic Rotation | QuadThoraticRotation | Quadruped thoracic rotation: hand behind head, rotate elbow to ceiling. | Back, Upper | Side | ✓ |
 | Sumo Squat | SquatSumo | Wide-stance squat with toes slightly out; upright torso. | Lower | Front | ✓ |
 
