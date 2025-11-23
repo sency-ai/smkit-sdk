@@ -41,14 +41,14 @@ This catalog lists **every movement currently defined in the SDK** and the strin
 | Jumping Jacks | JumpingJacks | Jump feet wide while arms overhead, then return. | Lower, Upper | Front | ✓ |
 | Jumps | Jumps | Bilateral vertical jumps with soft landing. | Lower | Front | ✓ |
 | Lateral Raises | LateralRaises | Shoulder abduction to ~90°; control up/down (bodyweight or light load). | Upper | Front | ✓ |
-| Narrow Squat | SquatNarrow | Squat with feet hip-width or narrower to emphasize quads. | Lower | Front | ⏳ |
-| Overhead Squat | SquatRegularOverhead | Dynamic squat with arms locked overhead; keep torso upright. | Back, Upper, Lower | Front | ⏳ |
+| Narrow Squat | SquatNarrow | Squat with feet hip-width or narrower to emphasize quads. | Lower | Front | ✓ |
+| Overhead Squat | SquatRegularOverhead | Dynamic squat with arms locked overhead; keep torso upright. | Back, Upper, Lower | Front | ✓ |
 | Plank Shoulder Taps | PlankHighShoulderTaps | From high plank, alternate tapping opposite shoulder without hip sway. | Upper | Front | ✓ |
-| Pushup Knees | PushupKnees | Push-up from knees for reduced load; chest to floor, elbows ~45°. | Upper, Abs | Side | ⏳ |
-| Pushup Knees Narrow | PushupKneesNarrow | Knee push-up with hands narrow; emphasizes triceps. | Upper, Abs | Side | ⏳ |
-| Pushup Knees Wide | PushupKneesWide | Knee push-up with wider hands; emphasizes chest. | Upper, Abs | Side | ⏳ |
-| Pushup Narrow | PushupNarrow | Standard push-up with hands under shoulders or closer; triceps-biased. | Upper, Abs | Side | ⏳ |
-| Pushup Wide | PushupWide | Standard push-up with wider hand placement; chest-biased. | Upper, Abs | Side | ⏳ |
+| Pushup Knees | PushupKnees | Push-up from knees for reduced load; chest to floor, elbows ~45°. | Upper, Abs | Side | ✓ |
+| Pushup Knees Narrow | PushupKneesNarrow | Knee push-up with hands narrow; emphasizes triceps. | Upper, Abs | Side | ✓ |
+| Pushup Knees Wide | PushupKneesWide | Knee push-up with wider hands; emphasizes chest. | Upper, Abs | Side | ✓ |
+| Pushup Narrow | PushupNarrow | Standard push-up with hands under shoulders or closer; triceps-biased. | Upper, Abs | Side | ✓ |
+| Pushup Wide | PushupWide | Standard push-up with wider hand placement; chest-biased. | Upper, Abs | Side | ✓ |
 | Pushups | PushupRegular | Standard push-up; braced core, full range. | Upper | Front | ✓ |
 | Reverse Sit To Table Top | ReverseSitToTableTop | From seated, press hips up to reverse tabletop; shoulders open. | Back, Upper, Lower | Side | ✓ |
 | Shoulders Press | ShouldersPress | Standing overhead press; ribs down, biceps by ears. | Upper | Front | ✓ |
