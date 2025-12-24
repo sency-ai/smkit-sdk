@@ -1,6 +1,7 @@
 # Movements Catalog
 
 This catalog lists **every movement currently defined in the SDK** and the string you should pass to the API to enable it. It’s organized by category so developers and customer stakeholders can quickly find what’s supported and how to use it efficiently.
+To review our full exercises and feedback catalog, [click here](https://www.sency.ai/movement-feedback-catalog) and contact us to receive your password.
 
 ## How to read this
 - **Movement** — human-friendly name.  
