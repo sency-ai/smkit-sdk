@@ -61,7 +61,7 @@ The *Custom Kit* is designed for those who prefer a hands-on approach. It does n
 | **iOS** | [SMKitUI](https://github.com/sency-ai/smkit-ui-ios-demo/tree/main) | [SMKit](https://github.com/sency-ai/smkit-ios-demo/tree/main) |
 | **Android** | [smkit-ui](https://github.com/sency-ai/smkit-ui-android-demo) | [smkit](https://github.com/sency-ai/smkit-android-demo) |
 | **React Native** | [react-native-smkit-ui](https://github.com/sency-ai/smkit-ui-react-native-demo) | [react-native-smkit](https://github.com/sency-ai/smkit-react-native-demo) |
-| **Flutter** | [flutter_smkit_ui](https://github.com/sency-ai/smkit-ui-flutter-demo) | NA |
+| **Flutter** | [flutter_smkit_ui](https://github.com/sency-ai/smkit-ui-flutter-demo) | [flutter-smkit](https://github.com/sency-ai/smkit-flutter-demo) |
 | **JavaScript** | NA | NA |
 | **Unity** | NA | NA |
 
