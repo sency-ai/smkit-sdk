@@ -30,6 +30,11 @@ Our documentation provides a thorough overview of our models and tools, an intro
 
 If you’re interested in testing our models, assessments, or conducting a brief workout without writing any code, please email us at [contact@sency.ai](mailto:contact@sency.ai) and we’ll share with you access to our iOS demo app.
 
+## **SDK Documentation Hub**
+
+**Start here:** [SMKit and SMKitUI Feature Documentation](SMKit-Features.html)  
+**Build integration examples:** [SDK Demo Configurations](SDK-Demo-Configurations.html)
+
 ------------------
 
 ## Table of Contents
