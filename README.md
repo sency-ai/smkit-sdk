@@ -35,6 +35,9 @@ If you’re interested in testing our models, assessments, or conducting a brief
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Choose Your Platform](#choose-your-platform)
+- [SMKit and SMKitUI Feature Documentation](SMKit-Features.html)
+- [SDK Demo Configurations](SDK-Demo-Configurations.html)
+- [Movement Feedback Catalog](https://www.sency.ai/movement-feedback-catalog)
 - [Support and Resources](#support-and-resources)
 
 ## Getting Started <a name="getting-started"></a>
@@ -64,6 +67,23 @@ The *Custom Kit* is designed for those who prefer a hands-on approach. It does n
 | **Flutter** | [flutter_smkit_ui](https://github.com/sency-ai/smkit-ui-flutter-demo) | [flutter-smkit](https://github.com/sency-ai/smkit-flutter-demo) |
 | **JavaScript** | NA | NA |
 | **Unity** | NA | NA |
+
+### Current SDK Versions
+
+| Kit | SDK | Latest version | Notes |
+|-------------------|-------------------|-------------------|-------------------|
+| **Custom Kit** | iOS SMKit | 2.0.7 | Native no-UI SDK. |
+| **Custom Kit** | Android smkit | 1.7.1 | Native no-UI artifact. |
+| **Custom Kit** | Flutter flutter_smkit | 1.1.0 | Flutter no-UI plugin. |
+| **Custom Kit** | React Native @sency/react-native-smkit | 1.2.1 | React Native no-UI package for iOS and Android. |
+| **Branded Kit** | iOS SMKitUI | 2.0.7 | Native branded UI SDK. |
+| **Branded Kit** | Android smkit-ui | 1.7.1 | Native branded UI artifact. |
+| **Branded Kit** | Flutter flutter_smkit_ui | 1.5.3 | Flutter branded UI plugin. |
+| **Branded Kit** | React Native @sency/react-native-smkit-ui | 2.4.0 | React Native branded UI package. |
+
+For supported movement names and feedback coverage, see the [Movement Feedback Catalog](https://www.sency.ai/movement-feedback-catalog).
+
+For demo-style assessment, workout, and exercise setup examples, see [SDK Demo Configurations](SDK-Demo-Configurations.html).
 
 Your platform is missing? [Let us know](mailto:support@sency.ai) and we'll get back to you with our plans as soon as we can.
 
