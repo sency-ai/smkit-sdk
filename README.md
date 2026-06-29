@@ -32,16 +32,16 @@ If you’re interested in testing our models, assessments, or conducting a brief
 
 ## **SDK Documentation Hub**
 
-**Start here:** [SMKit and SMKitUI Feature Documentation](SMKit-Features.html)  
-**Build integration examples:** [SDK Demo Configurations](SDK-Demo-Configurations.html)
+**Start here:** [SMKit and SMKitUI Feature Documentation](https://sency-ai.github.io/smkit-sdk/SMKit-Features.html)  
+**Build integration examples:** [SDK Demo Configurations](https://sency-ai.github.io/smkit-sdk/SDK-Demo-Configurations.html)
 
 ------------------
 
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Choose Your Platform](#choose-your-platform)
-- [SMKit and SMKitUI Feature Documentation](SMKit-Features.html)
-- [SDK Demo Configurations](SDK-Demo-Configurations.html)
+- [SMKit and SMKitUI Feature Documentation](https://sency-ai.github.io/smkit-sdk/SMKit-Features.html)
+- [SDK Demo Configurations](https://sency-ai.github.io/smkit-sdk/SDK-Demo-Configurations.html)
 - [Movement Feedback Catalog](https://www.sency.ai/movement-feedback-catalog)
 - [Support and Resources](#support-and-resources)
 
@@ -88,7 +88,7 @@ The *Custom Kit* is designed for those who prefer a hands-on approach. It does n
 
 For supported movement names and feedback coverage, see the [Movement Feedback Catalog](https://www.sency.ai/movement-feedback-catalog).
 
-For demo-style assessment, workout, and exercise setup examples, see [SDK Demo Configurations](SDK-Demo-Configurations.html).
+For demo-style assessment, workout, and exercise setup examples, see [SDK Demo Configurations](https://sency-ai.github.io/smkit-sdk/SDK-Demo-Configurations.html).
 
 Your platform is missing? [Let us know](mailto:support@sency.ai) and we'll get back to you with our plans as soon as we can.
 
