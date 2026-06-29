@@ -1,3 +1,3 @@
 # Movements Catalog
 
-For the full updated movement catalog, please [contact us](mailto:support@sency.ai).
+https://www.sency.ai/movement-feedback-catalog

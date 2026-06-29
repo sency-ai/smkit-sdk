@@ -1,0 +1,1724 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMKit SDK Demo Configurations</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --panel: #f7f8f9;
+      --panel-soft: #ffffff;
+      --line: #dcdfe4;
+      --text: #172b4d;
+      --muted: #44546f;
+      --dim: #626f86;
+      --cyan: #0c66e4;
+      --orange: #c25100;
+      --orange-soft: #7f5f01;
+      --code: #f7f8f9;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    header {
+      padding: 18px 26px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(9, 30, 66, 0.08);
+    }
+
+    .top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    h1 {
+      margin: 0 0 5px;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.05;
+      font-weight: 850;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 840px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .header-link,
+    .pill-button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--text);
+      padding: 8px 11px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .pill-button.active {
+      border-color: var(--cyan);
+      background: #e9f2ff;
+      color: var(--cyan);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .control-label {
+      color: var(--dim);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .layout {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+    }
+
+    aside {
+      min-height: 0;
+      border-right: 1px solid var(--line);
+      background: var(--panel);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .aside-title {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #f1f2f4;
+      color: var(--text);
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .nav {
+      min-height: 0;
+      overflow: auto;
+      padding: 12px;
+    }
+
+    .nav-group {
+      margin-bottom: 13px;
+    }
+
+    .nav-heading {
+      margin: 0 0 6px;
+      color: var(--dim);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      display: block;
+      padding: 8px 9px;
+      border-left: 2px solid transparent;
+      border-radius: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      border-left-color: var(--cyan);
+      background: #e9f2ff;
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    main {
+      min-height: 0;
+      overflow: auto;
+      padding: 30px 42px 70px;
+    }
+
+    .sdk-section {
+      max-width: 1080px;
+      margin: 0 auto 54px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sdk-section:last-child {
+      border-bottom: 0;
+    }
+
+    .sdk-kicker {
+      margin: 0 0 8px;
+      color: var(--orange-soft);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(25px, 2.4vw, 35px);
+      line-height: 1.1;
+    }
+
+    h3 {
+      margin: 26px 0 8px;
+      color: var(--cyan);
+      font-size: 17px;
+    }
+
+    h4 {
+      margin: 18px 0 8px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.64;
+    }
+
+    ul {
+      margin: 9px 0 0;
+      padding-left: 20px;
+    }
+
+    li::marker {
+      color: var(--orange);
+    }
+
+    .config-card {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .config-card:first-of-type {
+      margin-top: 22px;
+    }
+
+    .builder-card {
+      max-width: 1080px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(9, 30, 66, 0.08);
+    }
+
+    .builder-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .builder-header h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+
+    .builder-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .builder-field label,
+    .check-group-title {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--dim);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .builder-field select {
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .builder-section {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .check-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      min-height: 44px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f7f8f9;
+      color: var(--text);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .check-card input {
+      margin-top: 2px;
+      accent-color: var(--cyan);
+    }
+
+    .check-card small {
+      display: block;
+      margin-top: 2px;
+      color: var(--dim);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .builder-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .export-button {
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--cyan);
+      border-radius: 6px;
+      background: var(--cyan);
+      color: #ffffff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .export-button:hover {
+      background: #0055cc;
+    }
+
+    .builder-preview {
+      margin-top: 16px;
+      max-height: 260px;
+    }
+
+    pre {
+      margin: 12px 0 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--code);
+      overflow: auto;
+      box-shadow: none;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 12.5px;
+      line-height: 1.65;
+    }
+
+    pre code {
+      display: block;
+      padding: 15px;
+      color: #172b4d;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .page { min-height: 100%; height: auto; }
+      .layout { grid-template-columns: 1fr; }
+      aside { max-height: 310px; border-right: 0; border-bottom: 1px solid var(--line); }
+      main { overflow: visible; padding: 24px 18px 50px; }
+      .top-row { display: block; }
+      .header-actions { justify-content: flex-start; margin-top: 12px; }
+      .builder-grid,
+      .check-grid,
+      .exercise-grid {
+        grid-template-columns: 1fr;
+      }
+      .builder-header,
+      .builder-footer {
+        display: block;
+      }
+      .export-button {
+        margin-top: 12px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top-row">
+        <div>
+          <h1>SDK Demo Configurations</h1>
+          <p class="lede">Demo-oriented setup pages for assessment, workout, and exercise flows across SMKit and SMKitUI. These examples follow the public demo apps and keep branded SMKitUI flows separate from custom no-UI SMKit session flows.</p>
+        </div>
+        <nav class="header-actions" aria-label="Documentation links">
+          <a class="header-link" href="SMKit-Features.html">Feature docs</a>
+          <a class="header-link" href="README.md">README</a>
+          <a class="header-link" href="https://www.sency.ai/movement-feedback-catalog">Movements</a>
+        </nav>
+      </div>
+      <div class="controls">
+        <span class="control-label">Kit</span>
+        <div class="button-group" id="kitTabs"></div>
+        <span class="control-label">Page</span>
+        <div class="button-group" id="pageTabs"></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside>
+        <div class="aside-title">SDK pages</div>
+        <nav class="nav" id="sideNav" aria-label="SDK demo page navigation"></nav>
+      </aside>
+
+      <main id="content">
+        <section class="builder-card" id="config-builder">
+          <div class="builder-header">
+            <div>
+              <h2>Configuration Builder</h2>
+              <p class="lede">Choose a demo flow, enable SDK features, select exercises, and export a reusable integration config file.</p>
+            </div>
+          </div>
+
+          <div class="builder-grid">
+            <div class="builder-field">
+              <label for="builderKit">Kit</label>
+              <select id="builderKit"></select>
+            </div>
+            <div class="builder-field">
+              <label for="builderPlatform">SDK environment</label>
+              <select id="builderPlatform"></select>
+            </div>
+            <div class="builder-field">
+              <label for="builderPage">Demo flow</label>
+              <select id="builderPage"></select>
+            </div>
+          </div>
+
+          <div class="builder-section">
+            <span class="check-group-title">Feature options</span>
+            <div class="check-grid" id="featureOptionGrid"></div>
+          </div>
+
+          <div class="builder-section">
+            <span class="check-group-title">Exercise shortlist</span>
+            <div class="exercise-grid" id="exerciseGrid"></div>
+          </div>
+
+          <div class="builder-footer">
+            <p class="lede" id="builderSummary"></p>
+            <button class="export-button" id="exportConfig" type="button">Download integration file</button>
+          </div>
+          <pre class="builder-preview"><code id="builderPreview"></code></pre>
+        </section>
+
+        <section class="sdk-section" id="smkitui-flutter" data-kit="smkitui">
+          <p class="sdk-kicker">SMKitUI / Flutter</p>
+          <h2>Flutter SMKitUI Demo Configuration</h2>
+          <p>The Flutter branded demo configures the plugin, applies shared UI settings, then launches built-in assessments, custom workouts, and exercise definitions through SMKitUI models.</p>
+
+          <article class="config-card" data-page="assessment" id="smkitui-flutter-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>Use `startAssessment` for built-in assessment templates. Use `startCustomizedAssessment` when the demo builds its own `SMKitWorkout` with assessment exercises and scoring.</p>
+            <ul>
+              <li>Choose `AssessmentTypes.fitness`, `strength`, `cardio`, or `custom`.</li>
+              <li>Pass user data when available; otherwise the UI can collect missing details.</li>
+              <li>Apply shared demo settings before launching the flow.</li>
+            </ul>
+            <pre><code>await settings.applyTo(smkit); // Applies demo settings such as colors, audio, and calibration behavior.
+smkit.startAssessment( // Starts a branded built-in assessment flow.
+  type: AssessmentTypes.fitness, // Selects the built-in assessment template.
+  userData: { // Supplies optional user data so the flow does not need to ask.
+    'gender': 'Male', // Sets the demo gender value.
+    'birthday': DateTime(1990, 1, 1).millisecondsSinceEpoch, // Sends birthday as milliseconds.
+  }, // Finishes user data.
+  showSummary: true, // Shows the branded summary screen at the end.
+  modifications: currentModifications, // Applies optional detector or feedback parameter overrides.
+  onHandle: handleStatus, // Receives status, result, and error callbacks from native code.
+); // Launches the assessment.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkitui-flutter-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>The demo creates an `SMKitWorkout`, fills it with `SMKitExercise` objects, applies settings, and starts the branded workout shell.</p>
+            <ul>
+              <li>Workout-level fields define name, intro, soundtrack, exercises, and closure.</li>
+              <li>Each exercise carries detector, duration, instruction asset, UI elements, and options.</li>
+              <li>Parameter modifications can be passed with the workout start call.</li>
+            </ul>
+            <pre><code>final workout = await getDemoWorkout(); // Builds the demo SMKitWorkout from the local workout builder.
+await settings.applyTo(smkit); // Applies demo-wide SDK/UI settings before presentation.
+smkit.startCustomizedWorkout( // Starts the branded custom workout flow.
+  workout: workout, // Passes the configured workout model.
+  modifications: currentModifications, // Applies optional per-detector parameter overrides.
+  onHandle: handleStatus, // Receives workout lifecycle and summary callbacks.
+); // Presents SMKitUI.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkitui-flutter-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>Exercise configuration is the unit that powers both custom assessment and custom workout builders.</p>
+            <ul>
+              <li>Use rep-oriented UI for dynamic movements and timer/holding-position UI for static movements.</li>
+              <li>Use floor or elevated phone placement according to the exercise framing.</li>
+              <li>Attach per-exercise options for countdown, guidance, adaptive ROM, sounds, or stretch-set behavior.</li>
+            </ul>
+            <pre><code>final exercise = SMKitExercise( // Creates one branded exercise item.
+  name: 'Squat Regular', // Sets the visible exercise name.
+  detector: 'SquatRegular', // Selects the movement detector.
+  totalSeconds: 30, // Sets the exercise duration.
+  videoInstruction: 'SquatRegularInstructionVideo', // Selects the instruction video asset key.
+  uiElements: [SMKitUIElement.repsCounter, SMKitUIElement.timer], // Shows reps and timer.
+  phonePosition: SMKitPhonePosition.floor, // Requests floor phone placement.
+  shortIntro: true, // Uses the shorter intro flow when supported.
+); // Finishes the exercise configuration.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkitui-react-native" data-kit="smkitui">
+          <p class="sdk-kicker">SMKitUI / React Native</p>
+          <h2>React Native SMKitUI Demo Configuration</h2>
+          <p>The React Native branded demo uses `@sency/react-native-smkit-ui` and `SMWorkoutLibrary` models for built-in assessments, custom workouts, and assessment-style exercise scoring.</p>
+
+          <article class="config-card" data-page="assessment" id="smkitui-react-native-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>Built-in assessments call `startAssessment`. Custom assessments build `SMAssessmentExercise` instances with `SMScoringParams` and launch them as an assessment model.</p>
+            <ul>
+              <li>The demo exposes Fitness, Cardio, Strength, and Custom assessment options.</li>
+              <li>`showSummary` controls the summary screen.</li>
+              <li>Settings and parameter modifications are applied before the launch call.</li>
+            </ul>
+            <pre><code>await applyDemoSettings(settings); // Applies the demo's theme, audio, and runtime settings.
+const result = await startAssessment( // Starts a built-in branded assessment.
+  SMWorkoutLibrary.AssessmentTypes.Fitness, // Selects the assessment type.
+  true, // Shows the summary screen.
+  null, // Lets the SDK collect user data if needed.
+  false, // Does not force user data collection.
+  '', // Uses no custom assessment id.
+  buildModifications(settings), // Sends optional detector or feedback parameter overrides.
+); // Waits for the result payload.
+showSummaryModal(result.summary); // Displays the returned summary in the demo.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkitui-react-native-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>The demo builds a `SMWorkout` from `SMExercise` items and starts it with `startCustomWorkout`.</p>
+            <ul>
+              <li>Exercise arrays define sequence, UI elements, detector names, and per-exercise options.</li>
+              <li>Workout ids and names are app-owned.</li>
+              <li>The same result path returns workout summaries or errors.</li>
+            </ul>
+            <pre><code>const workout = new SMWorkoutLibrary.SMWorkout( // Creates the custom workout model.
+  'example-workout', // Sets a stable workout id.
+  'Example Custom Workout', // Sets the visible workout name.
+  null, // Uses no workout intro sound.
+  null, // Uses no soundtrack.
+  exercises, // Supplies the ordered SMExercise list.
+  null, // Uses no workout closure sound.
+  null, // Uses default body calibration copy.
+  null, // Uses default get-in-frame copy.
+); // Finishes workout creation.
+const result = await startCustomWorkout( // Starts the branded workout.
+  workout, // Passes the configured workout.
+  buildModifications(settings), // Applies optional parameter modifications.
+); // Waits for the native result.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkitui-react-native-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>React Native exercises are constructed with positional arguments plus an options object for newer per-exercise behavior.</p>
+            <ul>
+              <li>Use `UIElement.RepsCounter`, `Timer`, `GaugeOfMotion`, and related UI elements.</li>
+              <li>Use options for short intro, countdown, adaptive ROM, guidance, stretch sets, and phone position.</li>
+              <li>Use `SMAssessmentExercise` when scoring params and summary labels are required.</li>
+            </ul>
+            <pre><code>const exercise = new SMWorkoutLibrary.SMExercise( // Creates one exercise for a workout.
+  'Squat Regular', // Sets the visible exercise name.
+  30, // Sets total exercise seconds.
+  'SquatRegularInstructionVideo', // Selects the instruction video key.
+  null, // Uses no exercise intro audio.
+  [SMWorkoutLibrary.UIElement.RepsCounter, SMWorkoutLibrary.UIElement.Timer], // Shows reps and timer.
+  'SquatRegular', // Selects the detector.
+  null, // Uses no exercise closure audio.
+  null, // Uses no scoring params for workout mode.
+  { // Starts per-exercise options.
+    shortIntro: true, // Uses the short intro.
+    playPreExerciseCountdown: true, // Plays a countdown before detection starts.
+    adaptiveRomFeedbackEnabled: true, // Enables adaptive ROM feedback.
+    adaptiveRomWarmupReps: 2, // Uses two reps for ROM warmup.
+  }, // Finishes per-exercise options.
+); // Finishes exercise creation.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkitui-android" data-kit="smkitui">
+          <p class="sdk-kicker">SMKitUI / Android</p>
+          <h2>Android SMKitUI Demo Configuration</h2>
+          <p>The Android branded demo configures `SMKitUI`, applies settings, then starts built-in assessments and custom workouts with Kotlin data models.</p>
+
+          <article class="config-card" data-page="assessment" id="smkitui-android-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>Use `startAssessment` with an assessment type, listener, user data, optional modifications, and phone calibration behavior.</p>
+            <ul>
+              <li>The demo starts the Fitness assessment from the main screen.</li>
+              <li>`SMKitUIWorkoutListener` receives errors, summary, exit, and per-exercise data.</li>
+              <li>Parameter modifications are passed as JSON when needed.</li>
+            </ul>
+            <pre><code>applyBasicSettingsToSdk() // Applies demo settings before launching the flow.
+val modifications = getExampleModificationsJson() // Builds optional detector/feedback overrides.
+smKitUI?.startAssessment( // Starts the built-in assessment.
+  assessmentType = Fitness, // Selects the Fitness assessment type.
+  listener = this, // Receives workout and assessment callbacks.
+  userData = UserData(14, Gender.Male), // Supplies demo user data.
+  showSummary = true, // Shows the summary screen.
+  modifications = modifications, // Applies parameter modifications.
+  showPhoneCalibration = true // Shows phone placement calibration before the flow.
+) // Launches SMKitUI.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkitui-android-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>Custom workouts are `SMWorkout` objects with id, name, audio keys, exercise lists, and optional continuation behavior.</p>
+            <ul>
+              <li>Use `startCustomizedWorkout` for demo-created workout sequences.</li>
+              <li>Pass `showPhoneCalibration = true` when the flow should guide phone placement.</li>
+              <li>Exercise lists come from the demo view model.</li>
+            </ul>
+            <pre><code>val workout = SMWorkout( // Creates the custom workout model.
+  id = "50", // Sets the demo workout id.
+  name = "demo workout", // Sets the visible workout name.
+  workoutIntro = "workoutIntro", // Selects the workout intro sound key.
+  soundtrack = "soundtrack_7", // Selects the soundtrack key.
+  exercises = viewModel.workoutExercises(), // Supplies ordered exercise definitions.
+  workoutClosure = "workoutClosure", // Selects the closure sound key.
+  getInFrame = "getInFrame", // Selects get-in-frame copy/audio key.
+  bodycalFinished = "bodycalFinished" // Selects body calibration completion key.
+) // Finishes workout configuration.
+smKitUI?.startCustomizedWorkout( // Starts the branded workout.
+  workout, // Passes the configured workout.
+  listener = this, // Receives lifecycle callbacks.
+  modifications = getExampleModificationsJson(), // Applies optional parameter overrides.
+  showPhoneCalibration = true // Shows phone calibration before the workout.
+) // Launches the workout.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkitui-android-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>Android exercise definitions are Kotlin `SMExercise` values. The demo uses view-model helpers to build normal workout exercises and SDK-feature-specific exercise variants.</p>
+            <ul>
+              <li>Dynamic exercises usually show reps, timer, and gauge UI.</li>
+              <li>Static exercises usually show timer and holding-position UI.</li>
+              <li>Per-exercise options can include adaptive ROM, countdown, milestone sounds, and phone placement.</li>
+            </ul>
+            <pre><code>val exercise = SMExercise( // Creates one workout exercise.
+  name = "Squat Regular", // Sets the visible exercise name.
+  totalSeconds = 30, // Sets exercise duration.
+  videoInstruction = "SquatRegularInstructionVideo", // Selects instruction asset key.
+  exerciseIntro = null, // Uses no exercise intro audio.
+  uiElements = setOf(UiElement.repsCounter, UiElement.timer, UiElement.gaugeOfMotion), // Shows workout UI.
+  detector = "SquatRegular", // Selects the movement detector.
+  exerciseClosure = null, // Uses no exercise closure audio.
+  scoringParams = null, // Keeps workout mode unscored.
+  adaptiveRomFeedbackEnabled = true, // Enables adaptive ROM feedback.
+  adaptiveRomWarmupReps = 2 // Uses two warmup reps for ROM calibration.
+) // Finishes exercise creation.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkitui-ios" data-kit="smkitui">
+          <p class="sdk-kicker">SMKitUI / iOS</p>
+          <h2>iOS SMKitUI Demo Configuration</h2>
+          <p>The iOS branded demo uses UIKit controllers to choose built-in assessments, build custom assessments, build workouts, and launch `SMKitUIModel` flows.</p>
+
+          <article class="config-card" data-page="assessment" id="smkitui-ios-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>The demo presents a built-in assessment picker, applies settings, and starts the chosen assessment type.</p>
+            <ul>
+              <li>Use `AssessmentTypes` for built-in flows.</li>
+              <li>Pass `UserData` when available.</li>
+              <li>Use the SDK spelling `startAssessmet` where required by the iOS API.</li>
+            </ul>
+            <pre><code>DemoSettingsStore.shared.applyToSDK() // Applies demo settings before presenting SMKitUI.
+let userData = UserData(gender: .Female, birthday: Date()) // Supplies optional user data.
+try SMKitUIModel.startAssessmet( // Starts a built-in assessment using the iOS API spelling.
+  viewController: viewController, // Presents from the current controller.
+  type: AssessmentTypes.Fitness, // Selects the built-in assessment type.
+  userData: userData, // Passes optional user profile data.
+  delegate: self, // Receives assessment/workout callbacks.
+  onFailure: { error in print(error.localizedDescription) }, // Handles launch errors.
+  showPhoneCalibration: DemoSettingsStore.shared.showPhoneCalibration // Controls phone calibration.
+) // Launches the assessment.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkitui-ios-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>The iOS demo creates `SMWorkout`, optionally attaches continuation exercises, and starts it with `startWorkout`.</p>
+            <ul>
+              <li>Workout fields cover id, name, intro, soundtrack, exercise list, and closure.</li>
+              <li>Continuation is optional and only attached when the exercise list is non-empty.</li>
+              <li>The delegate receives finish, exit, summary, and per-exercise callbacks.</li>
+            </ul>
+            <pre><code>let workout = SMWorkout( // Creates the branded workout model.
+  id: "", // Sets the workout id.
+  name: "Demo Workout", // Sets the visible workout name.
+  workoutIntro: nil, // Uses no workout intro audio.
+  soundtrack: nil, // Uses no soundtrack.
+  exercises: exercises, // Supplies the ordered SMExercise list.
+  workoutClosure: nil, // Uses no workout closure audio.
+  continuation: continuation // Attaches optional continuation exercises.
+) // Finishes workout creation.
+try SMKitUIModel.startWorkout( // Starts the branded workout.
+  viewController: viewController, // Presents from the current controller.
+  workout: workout, // Passes the configured workout.
+  delegate: self, // Receives lifecycle callbacks.
+  showPhoneCalibration: DemoSettingsStore.shared.showPhoneCalibration // Controls calibration.
+) // Launches SMKitUI.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkitui-ios-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>The iOS demo creates `SMExercise` from catalog entries, then sets extra properties such as guidance mode before starting a one-exercise workout.</p>
+            <ul>
+              <li>Use `ExerciseCatalog` to derive display name and default duration.</li>
+              <li>Use instruction video keys or bundled file paths.</li>
+              <li>Set `guidanceMode`, phone position, wide-angle, or other properties before adding the exercise to a workout.</li>
+            </ul>
+            <pre><code>var exercise = SMExercise( // Creates one branded exercise.
+  name: ExerciseCatalog.displayName(for: detector), // Sets display name from the demo catalog.
+  exerciseIntro: nil, // Uses no exercise intro audio.
+  totalSeconds: max(10, ExerciseCatalog.entry(for: detector).defaultDuration), // Sets duration.
+  videoInstruction: "\(detector)InstructionVideo", // Selects instruction video key.
+  uiElements: nil, // Lets the SDK choose default UI elements.
+  detector: detector, // Selects the movement detector.
+  exerciseClosure: nil // Uses no closure audio.
+) // Finishes exercise creation.
+exercise.guidanceMode = true // Enables guidance for the exercise flow.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkit-flutter" data-kit="smkit">
+          <p class="sdk-kicker">SMKit / Flutter</p>
+          <h2>Flutter SMKit Demo Configuration</h2>
+          <p>The Flutter no-UI demo owns the screens and uses SMKit for camera session, detection, calibration, events, and summaries. Assessment and workout demos are app-level compositions over the same session and exercise APIs.</p>
+
+          <article class="config-card" data-page="assessment" id="smkit-flutter-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>SMKit has no branded built-in assessment launcher. The demo assessment button starts an app-owned assessment flow that runs one or more detections and computes the result in the host UI.</p>
+            <ul>
+              <li>Configure SMKit first.</li>
+              <li>Start a session and run the assessment exercise sequence.</li>
+              <li>Use detection data and stop summaries for scoring and result UI.</li>
+            </ul>
+            <pre><code>await SmKit.startSession( // Starts the camera session for the app-owned assessment.
+  viewId: viewId, // Attaches SMKit to the Flutter camera preview.
+  settings: const SessionSettings(phonePositionType: SmKitPhonePosition.floor), // Uses floor framing.
+); // Waits for the session to start.
+await SmKit.startDetection( // Starts the assessment exercise detector.
+  exercise: 'SquatRegular', // Selects the movement for this assessment step.
+); // Begins live detection.
+final result = await SmKit.stopDetection(recordExercise: true); // Records the step result.
+final summary = await SmKit.stopSession(); // Ends the assessment session and returns summary data.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkit-flutter-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>Workout mode is also host-owned in SMKit: define an ordered exercise plan in Flutter, then start and stop detectors in sequence.</p>
+            <ul>
+              <li>The app controls exercise cards, timers, transitions, and rest UI.</li>
+              <li>SMKit provides camera, feedback, rep data, and exercise/session summaries.</li>
+              <li>Use `recordExercise: true` for exercises that should appear in the session summary.</li>
+            </ul>
+            <pre><code>final plan = ['SquatRegular', 'HighKnees']; // Defines the app-owned workout sequence.
+await SmKit.startSession(viewId: viewId); // Starts the camera session once for the workout.
+for (final detector in plan) { // Runs each exercise in order.
+  await SmKit.startDetection(exercise: detector); // Starts the current detector.
+  await Future.delayed(const Duration(seconds: 30)); // Lets the host workout timer run.
+  await SmKit.stopDetection(recordExercise: true); // Saves the exercise result.
+} // Finishes the workout loop.
+final workoutSummary = await SmKit.stopSession(); // Returns the recorded workout summary.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkit-flutter-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>The core exercise page configures session options and starts one detector. The host app renders all exercise UI.</p>
+            <ul>
+              <li>Use detector names from the movement catalog.</li>
+              <li>Subscribe to session events for detection, position, phone calibration, and body calibration updates.</li>
+              <li>Use adaptive ROM and guidance options on `startDetection` where supported.</li>
+            </ul>
+            <pre><code>SmKit.sessionEventStream.listen((event) { // Subscribes to native SDK events.
+  print(event.type.toString()); // Routes detection or calibration events into the host UI.
+}); // Starts the subscription.
+await SmKit.startDetection( // Starts one exercise detector.
+  exercise: 'SquatRegular', // Selects the movement detector.
+  adaptiveRomFeedbackEnabled: true, // Enables adaptive ROM feedback.
+  adaptiveRomWarmupReps: 2, // Uses two reps to set the ROM baseline.
+); // Begins exercise detection.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkit-react-native" data-kit="smkit">
+          <p class="sdk-kicker">SMKit / React Native</p>
+          <h2>React Native SMKit Demo Configuration</h2>
+          <p>The React Native no-UI demo uses `SmkitCameraView`, imperative ref methods, and app-owned state to run sessions, exercise detection, and summary handling.</p>
+
+          <article class="config-card" data-page="assessment" id="smkit-react-native-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>SMKit React Native does not launch branded assessments. The demo uses an app-owned assessment screen that starts a session, runs detectors, and computes results from callbacks.</p>
+            <ul>
+              <li>Request Android camera permission before mounting/starting the session.</li>
+              <li>Use `onDetectionData` for live scoring and `onDetectionStopped` for exercise summaries.</li>
+              <li>Use the native skeleton overlay on Android when the UI needs low-latency skeleton rendering.</li>
+            </ul>
+            <pre><code>const hasPermission = await ensureAndroidCameraPermission(); // Requests Android camera permission when needed.
+if (!hasPermission) return; // Stops if the user denied camera access.
+setSessionStarted(true); // Mounts the SmkitCameraView in the app UI.
+cameraRef.current?.startSession({ // Starts the native SMKit session.
+  phonePosition: 'Floor', // Uses floor phone placement.
+  userHeight: 175, // Supplies user height for configured exercises.
+}); // Begins camera processing.
+cameraRef.current?.startDetection('SquatRegular'); // Starts the assessment exercise detector.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkit-react-native-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>The workout demo is a host-controlled sequence over one `SmkitCameraView` session.</p>
+            <ul>
+              <li>The app owns exercise selection, timers, transitions, and result presentation.</li>
+              <li>Use `startSession` once, then `startDetection` for each exercise.</li>
+              <li>Use `stopDetection({ recordExercise: true })` to add exercise results to the session summary where supported.</li>
+            </ul>
+            <pre><code>const workout = ['SquatRegular', 'HighKnees']; // Defines the app-owned workout plan.
+cameraRef.current?.startSession({ phonePosition: 'Floor' }); // Starts the camera session.
+for (const exercise of workout) { // Iterates through the workout exercises.
+  cameraRef.current?.startDetection(exercise); // Starts the selected detector.
+  await waitForExerciseTimer(); // Lets the host timer or target logic run.
+  cameraRef.current?.stopDetection({ recordExercise: true }); // Records the exercise result.
+} // Finishes all exercises.
+cameraRef.current?.stopSession(); // Ends the session and triggers summary callbacks.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkit-react-native-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>The React Native exercise demo configures the camera view props and uses the ref to start detection.</p>
+            <ul>
+              <li>`onDetectionData` receives rep, feedback, ROM, and score data.</li>
+              <li>`onPositionData` can render a JS skeleton; Android can instead use `showNativeSkeletonOverlay`.</li>
+              <li>Use `positionDataFps` and `detectionDataFps` to manage bridge traffic.</li>
+            </ul>
+            <pre><code>&lt;SmkitCameraView // Renders the native SMKit camera view.
+  ref={cameraRef} // Exposes imperative session and detection methods.
+  authKey={API_KEY} // Supplies the SDK auth key.
+  exercise={selectedExercise} // Stores the currently selected detector.
+  phonePosition="Floor" // Uses floor placement.
+  showNativeSkeletonOverlay={Platform.OS === 'android'} // Uses native Android skeleton rendering.
+  onDetectionData={handleDetectionData} // Receives live movement data.
+  onDetectionStopped={handleDetectionStopped} // Receives exercise summary data.
+/&gt; // Finishes the camera view.
+cameraRef.current?.startDetection('SquatRegular'); // Starts the selected exercise.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkit-android" data-kit="smkit">
+          <p class="sdk-kicker">SMKit / Android</p>
+          <h2>Android SMKit Demo Configuration</h2>
+          <p>The Android no-UI demo owns the fragments and uses a view model around native SMKit to start sessions, run detectors, and present assessment/workout screens.</p>
+
+          <article class="config-card" data-page="assessment" id="smkit-android-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>The demo assessment fragment starts a camera session and runs an app-defined sequence through the shared activity view model.</p>
+            <ul>
+              <li>SMKit no-UI does not present branded assessment screens.</li>
+              <li>The app owns the assessment list, score labels, and result screen.</li>
+              <li>SMKit supplies live detection data and exercise/session summaries.</li>
+            </ul>
+            <pre><code>viewModel.startSession( // Starts the native camera session.
+  viewLifecycleOwner, // Binds camera work to the fragment lifecycle.
+  binding.previewView.surfaceProvider // Supplies the CameraX preview surface.
+) // Begins frame processing.
+viewModel.startDetection( // Starts the assessment movement.
+  exerciseName = "SquatRegular", // Selects the detector.
+  guidanceMode = null // Lets SMKit choose default guidance behavior.
+) // Begins assessment detection.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkit-android-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>The workout fragment follows the same session/detection model but iterates through a host-defined workout sequence.</p>
+            <ul>
+              <li>Use a single session for the workout when possible.</li>
+              <li>Switch or stop/start detectors between exercises.</li>
+              <li>Call `stopSession` when the app-owned workout is complete.</li>
+            </ul>
+            <pre><code>val workout = listOf("SquatRegular", "HighKnees") // Defines the app-owned workout sequence.
+viewModel.startSession(viewLifecycleOwner, binding.previewView.surfaceProvider) // Starts camera preview.
+workout.forEach { exerciseName -> // Runs each detector in order.
+  viewModel.startDetection(exerciseName, guidanceMode = null) // Starts the current exercise.
+  waitForTimerOrTarget() // Lets the host workout logic decide when to stop.
+  viewModel.stopDetection(recordExercise = true) // Saves the exercise result.
+} // Finishes the sequence.
+viewModel.stopSession() // Ends the workout session.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkit-android-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>Exercise configuration is the detector name plus native session options and optional config string/guidance mode.</p>
+            <ul>
+              <li>Use `startDetection(exerciseName, configString, guidanceMode)` through the SDK/view model.</li>
+              <li>Use listener callbacks for detection data, position data, errors, and camera readiness.</li>
+              <li>Use `PoseModelChoice.AdaptiveChoice` during configure when following the current demo setup.</li>
+            </ul>
+            <pre><code>smKit.startDetection( // Starts one Android detector.
+  exercise = "SquatRegular", // Selects the movement detector.
+  configString = null, // Uses default detector parameters.
+  guidanceMode = null // Lets default guidance policy decide.
+) // Begins exercise detection.
+smKit.smKitSessionListener(sessionListener) // Receives movement and pose callbacks.</code></pre>
+          </article>
+        </section>
+
+        <section class="sdk-section" id="smkit-ios" data-kit="smkit">
+          <p class="sdk-kicker">SMKit / iOS</p>
+          <h2>iOS SMKit Demo Configuration</h2>
+          <p>The iOS no-UI demo owns its SwiftUI/UIKit screens and uses `SMKitFlowManager` for camera session, detection, and summary data.</p>
+
+          <article class="config-card" data-page="assessment" id="smkit-ios-assessment">
+            <h3>Assessment Demo Configuration</h3>
+            <p>The iOS SMKit demo includes an app-owned assessment controller. It starts an SMKit session, runs the current assessment exercise, and uses returned exercise data for the assessment UI.</p>
+            <ul>
+              <li>SMKit does not present branded assessment screens.</li>
+              <li>The app controls assessment steps, scoring, and navigation.</li>
+              <li>Use `SMKitSessionSettings` to configure phone placement, camera, and user options.</li>
+            </ul>
+            <pre><code>let settings = SMKitSessionSettings( // Creates session settings for the assessment.
+  phonePosition: .Floor, // Uses floor phone placement.
+  autoStartCamera: true // Starts camera capture when the session starts.
+) // Finishes session settings.
+flowManager?.startSession(sessionSettings: settings) { result in // Starts camera/model session.
+  if case .success = result { // Continues only after session startup succeeds.
+    try? self.flowManager?.startDetection(exercise: currentExercise) // Starts the assessment exercise.
+  } // Finishes success handling.
+} // Finishes session start.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="workout" id="smkit-ios-workout">
+            <h3>Workout Demo Configuration</h3>
+            <p>Workout configuration is host-owned: define the movement sequence in the app, run each detector, record results, then stop the session.</p>
+            <ul>
+              <li>The app owns workout UI, timers, transitions, and rest states.</li>
+              <li>SMKit owns camera processing and movement feedback.</li>
+              <li>Use `recordExercise: true` when an exercise should be included in session data.</li>
+            </ul>
+            <pre><code>let workout = ["SquatRegular", "HighKnees"] // Defines the app-owned workout sequence.
+flowManager?.startSession(sessionSettings: SMKitSessionSettings()) { result in // Starts the session.
+  guard case .success = result else { return } // Stops if camera/model startup failed.
+  try? self.flowManager?.startDetection(exercise: workout[0]) // Starts the first detector.
+} // Finishes session start.
+let exerciseInfo = try flowManager?.stopDetection(recordExercise: true) // Records one exercise result.
+flowManager?.stopSession { result in print(result) } // Ends the workout and reads session data.</code></pre>
+          </article>
+
+          <article class="config-card" data-page="exercise" id="smkit-ios-exercise">
+            <h3>Exercise Demo Configuration</h3>
+            <p>The exercise demo uses `SMKitFlowManager` with session settings and a detector name.</p>
+            <ul>
+              <li>Use detector names from the movement catalog.</li>
+              <li>Implement `SMKitSessionDelegate` for camera, detection, position, and error callbacks.</li>
+              <li>Keep camera settings aligned with the selected detector and phone placement.</li>
+            </ul>
+            <pre><code>flowManager = SMKitFlowManager(delegate: self) // Creates the SMKit flow manager with callbacks.
+let settings = SMKitSessionSettings(autoStartCamera: true) // Creates an exercise session that starts camera capture.
+flowManager?.startSession(sessionSettings: settings) { result in // Starts camera capture.
+  if case .success = result { // Runs after the session is ready.
+    try? self.flowManager?.startDetection(exercise: "SquatRegular") // Starts exercise detection.
+  } // Finishes success handling.
+} // Finishes session startup.</code></pre>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const kits = [
+      { id: "all", label: "All" },
+      { id: "smkitui", label: "SMKitUI" },
+      { id: "smkit", label: "SMKit" }
+    ];
+
+    const pages = [
+      { id: "all", label: "All" },
+      { id: "assessment", label: "Assessment" },
+      { id: "workout", label: "Workout" },
+      { id: "exercise", label: "Exercise" }
+    ];
+
+    const builderKits = [
+      { id: "smkitui", label: "SMKitUI" },
+      { id: "smkit", label: "SMKit" }
+    ];
+
+    const builderPlatforms = [
+      { id: "flutter", label: "Flutter" },
+      { id: "reactNative", label: "React Native" },
+      { id: "android", label: "Android" },
+      { id: "ios", label: "iOS" }
+    ];
+
+    const builderPages = pages.filter(page => page.id !== "all");
+
+    const sectionOrder = [
+      "smkitui-flutter",
+      "smkitui-react-native",
+      "smkitui-android",
+      "smkitui-ios",
+      "smkit-flutter",
+      "smkit-react-native",
+      "smkit-android",
+      "smkit-ios"
+    ];
+
+    const pageOrder = ["assessment", "workout", "exercise"];
+
+    const smkituiBuilderOptions = [
+      ["phoneCalibration", "Phone calibration", "Adds floor/elevated phone-calibration parameters to the launch call or exercise model."],
+      ["adaptiveRom", "Adaptive ROM", "Adds adaptive-ROM enablement and warmup-rep settings where the SDK exposes them."],
+      ["exerciseUiElements", "Exercise UI elements", "Generates reps, timer, ROM gauge, and hold-state UI elements from the selected exercises."],
+      ["colorTheme", "Color theme", "Applies the green SMKitUI theme used by the demo app."],
+      ["audioControls", "Audio controls", "Enables phone/body calibration audio and iOS external-audio controls where available."],
+      ["counterTarget", "Counter / target", "Adds target reps and target-based ending behavior where supported."],
+      ["phoneMovementPrevention", "Phone movement prevention", "Adds phone-movement count prevention setup where exposed."],
+      ["feedbackExclusions", "Feedback exclusions", "Adds a small feedback-exclusion example for SDK UI/data output."]
+    ];
+
+    const smkitBuilderOptions = [
+      ["phoneCalibration", "Phone placement", "Adds floor/elevated session settings from the selected exercises."],
+      ["adaptiveRom", "Adaptive ROM", "Adds adaptive-ROM setup before detection where available."],
+      ["guidanceMode", "Guidance mode", "Starts detection with guidance enabled for selected detectors."],
+      ["poseSkeletonStream", "Skeleton / position stream", "Adds callback hooks for app-owned skeleton overlays."],
+      ["phoneMovementPrevention", "Phone movement prevention", "Adds phone-movement count prevention setup where exposed."],
+      ["feedbackExclusions", "Feedback exclusions", "Adds feedback-exclusion setup where exposed."],
+      ["sessionSummary", "Session summary", "Records exercises and stops the session to read a final summary."]
+    ];
+
+    const featureOptions = {
+      smkitui: {
+        assessment: smkituiBuilderOptions,
+        workout: smkituiBuilderOptions,
+        exercise: smkituiBuilderOptions
+      },
+      smkit: {
+        assessment: smkitBuilderOptions,
+        workout: smkitBuilderOptions,
+        exercise: smkitBuilderOptions
+      }
+    };
+
+    const exerciseCatalog = [
+      { id: "jefferson-curl", label: "Jefferson Curl", detector: "JeffersonCurl", seconds: 20, uiElements: ["timer", "gaugeOfMotion"], phonePosition: "floor" },
+      { id: "downward-dog-prayer", label: "Downward Dog Prayer Stretch", detector: "DownwardDogPrayerStretch", seconds: 20, uiElements: ["timer", "holdingPosition"], phonePosition: "floor" },
+      { id: "crunches", label: "Crunches", detector: "Crunches", seconds: 30, targetReps: 15, uiElements: ["repsCounter", "timer"], phonePosition: "floor" },
+      { id: "shoulder-circles", label: "Shoulder Circles", detector: "ShoulderCircles", seconds: 30, uiElements: ["timer"], phonePosition: "elevated" },
+      { id: "plank-high-static", label: "Plank High Static", detector: "PlankHighStatic", seconds: 30, uiElements: ["timer", "holdingPosition"], phonePosition: "floor" },
+      { id: "squat-regular-static", label: "Squat Regular Static", detector: "SquatRegularStatic", seconds: 30, uiElements: ["timer", "gaugeOfMotion"], phonePosition: "elevated" },
+      { id: "squat-regular", label: "Squat Regular", detector: "SquatRegular", seconds: 30, targetReps: 10, uiElements: ["repsCounter", "timer", "gaugeOfMotion"], phonePosition: "floor" },
+      { id: "high-knees", label: "High Knees", detector: "HighKnees", seconds: 30, targetReps: 20, uiElements: ["repsCounter", "timer"], phonePosition: "elevated" },
+      { id: "lunge-front", label: "Lunge Front", detector: "LungeFront", seconds: 30, targetReps: 10, uiElements: ["repsCounter", "timer"], phonePosition: "floor" }
+    ];
+
+    const state = {
+      kit: "all",
+      page: "all",
+      activeId: ""
+    };
+
+    const builderState = {
+      kit: "smkitui",
+      platform: "flutter",
+      page: "workout",
+      options: new Set(["phoneCalibration", "exerciseUiElements", "colorTheme"]),
+      exercises: new Set(["squat-regular", "plank-high-static", "jefferson-curl"])
+    };
+
+    const kitTabs = document.getElementById("kitTabs");
+    const pageTabs = document.getElementById("pageTabs");
+    const sideNav = document.getElementById("sideNav");
+    const content = document.getElementById("content");
+    const builderKit = document.getElementById("builderKit");
+    const builderPlatform = document.getElementById("builderPlatform");
+    const builderPage = document.getElementById("builderPage");
+    const featureOptionGrid = document.getElementById("featureOptionGrid");
+    const exerciseGrid = document.getElementById("exerciseGrid");
+    const builderSummary = document.getElementById("builderSummary");
+    const builderPreview = document.getElementById("builderPreview");
+    const exportConfig = document.getElementById("exportConfig");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function orderIndex(order, id) {
+      const index = order.indexOf(id);
+      return index === -1 ? order.length : index;
+    }
+
+    function orderedSections() {
+      return [...document.querySelectorAll(".sdk-section")].sort((first, second) => {
+        return orderIndex(sectionOrder, first.id) - orderIndex(sectionOrder, second.id);
+      });
+    }
+
+    function orderedCards(section) {
+      return [...section.querySelectorAll(".config-card")].sort((first, second) => {
+        return orderIndex(pageOrder, first.dataset.page) - orderIndex(pageOrder, second.dataset.page);
+      });
+    }
+
+    function syncMainOrder() {
+      const builder = document.getElementById("config-builder");
+      if (builder) content.prepend(builder);
+      orderedSections().forEach(section => {
+        orderedCards(section).forEach(card => section.appendChild(card));
+        content.appendChild(section);
+      });
+    }
+
+    function visibleSections() {
+      return orderedSections().filter(section => {
+        return state.kit === "all" || section.dataset.kit === state.kit;
+      });
+    }
+
+    function visibleCards(section) {
+      return orderedCards(section).filter(card => {
+        return state.page === "all" || card.dataset.page === state.page;
+      });
+    }
+
+    function renderTabs() {
+      kitTabs.innerHTML = kits.map(kit => `
+        <button class="pill-button ${kit.id === state.kit ? "active" : ""}" type="button" data-kit="${kit.id}">
+          ${escapeHtml(kit.label)}
+        </button>
+      `).join("");
+
+      pageTabs.innerHTML = pages.map(page => `
+        <button class="pill-button ${page.id === state.page ? "active" : ""}" type="button" data-page="${page.id}">
+          ${escapeHtml(page.label)}
+        </button>
+      `).join("");
+    }
+
+    function selectedBuilderOptions() {
+      return featureOptions[builderState.kit][builderState.page].filter(option => builderState.options.has(option[0])).map(option => ({
+        id: option[0],
+        label: option[1],
+        description: option[2]
+      }));
+    }
+
+    function selectedExercises() {
+      return exerciseCatalog.filter(exercise => builderState.exercises.has(exercise.id));
+    }
+
+    function generatedEntryPoint() {
+      if (builderState.kit === "smkitui") {
+        if (builderState.page === "assessment") return "startAssessment or startCustomizedAssessment";
+        if (builderState.page === "workout") return "startCustomizedWorkout / startCustomWorkout / startWorkout";
+        return "SMExercise inside a one-exercise SMWorkout";
+      }
+      if (builderState.page === "assessment") return "App-owned assessment over startSession + startDetection";
+      if (builderState.page === "workout") return "App-owned workout sequence over startSession + startDetection";
+      return "startDetection for one selected detector";
+    }
+
+    function generatedSnippet(config) {
+      const detectors = config.exercises.map(exercise => exercise.detector).join(", ");
+      const options = config.enabledOptions.map(option => option.id).join(", ");
+      return [
+        `// ${config.kit.toUpperCase()} ${config.platform} ${config.flow} demo config`,
+        `// Entry point: ${config.entryPoint}`,
+        `// Exercises: ${detectors || "none selected"}`,
+        `// Enabled options: ${options || "none selected"}`,
+        builderState.kit === "smkitui"
+          ? "Build SDK exercise/workout models from this JSON, then launch the matching branded SMKitUI flow."
+          : "Start one SDK session, run the selected detectors in order, and record summaries in your host UI."
+      ].join("\n");
+    }
+
+    function compactExerciseForExport(exercise) {
+      const result = {
+        name: exercise.label,
+        detector: exercise.detector,
+        seconds: exercise.seconds,
+        uiElements: exercise.uiElements,
+        phonePosition: exercise.phonePosition
+      };
+      if (exercise.targetReps) result.targetReps = exercise.targetReps;
+      return result;
+    }
+
+    function buildExportConfig() {
+      const config = {
+        generatedAt: new Date().toISOString(),
+        kit: builderState.kit,
+        platform: builderState.platform,
+        flow: builderState.page,
+        entryPoint: generatedEntryPoint(),
+        enabledOptions: selectedBuilderOptions(),
+        exercises: selectedExercises().map(compactExerciseForExport),
+        defaults: {
+          showSummary: builderState.page === "assessment",
+          showPhoneCalibration: builderState.options.has("phoneCalibration"),
+          phonePositionFallback: "floor",
+          adaptiveRomWarmupReps: builderState.options.has("adaptiveRom") ? 2 : null,
+          colorTheme: builderState.options.has("colorTheme") ? "green" : null,
+          endExercisePreference: builderState.options.has("counterTarget") ? "targetBased" : "manual"
+        },
+        integrationNotes: [
+          builderState.kit === "smkitui" ? "Use this config to build branded SMKitUI assessment/workout/exercise models." : "Use this config in your host app; SMKit does not present branded assessment/workout screens.",
+          "Map detector names to the public movement catalog before shipping.",
+          "Keep parameter modification values versioned with the SDK version you test against."
+        ]
+      };
+      config.generatedSnippet = generatedSnippet(config);
+      return config;
+    }
+
+    function sourceFileName(config) {
+      const extensionByPlatform = {
+        flutter: "dart",
+        reactNative: "tsx",
+        android: "kt",
+        ios: "swift"
+      };
+      return `smkit-${config.kit}-${config.platform}-${config.flow}-demo-config.${extensionByPlatform[config.platform] || "txt"}`;
+    }
+
+    function sourceMimeType(config) {
+      return config.platform === "reactNative" ? "text/typescript" : "text/plain";
+    }
+
+    function sourceComment(config, text) {
+      return config.platform === "flutter" || config.platform === "reactNative" || config.platform === "android" || config.platform === "ios"
+        ? `// ${text}`
+        : `# ${text}`;
+    }
+
+    function sourceString(value) {
+      return JSON.stringify(value);
+    }
+
+    function sourceOptions(config) {
+      return config.enabledOptions.map(option => option.id);
+    }
+
+    function hasOption(config, optionId) {
+      return sourceOptions(config).includes(optionId);
+    }
+
+    function primaryExercise(config) {
+      return config.exercises[0] || { name: "Squat Regular", detector: "SquatRegular", seconds: 30, uiElements: ["repsCounter", "timer"], phonePosition: "floor", targetReps: 10 };
+    }
+
+    function dartUiElement(name) {
+      const map = {
+        repsCounter: "SMKitUIElement.repsCounter",
+        timer: "SMKitUIElement.timer",
+        gaugeOfMotion: "SMKitUIElement.gaugeOfMotion",
+        holdingPosition: "SMKitUIElement.holdingPosition"
+      };
+      return map[name] || "SMKitUIElement.timer";
+    }
+
+    function rnUiElement(name) {
+      const map = {
+        repsCounter: "SMWorkoutLibrary.UIElement.RepsCounter",
+        timer: "SMWorkoutLibrary.UIElement.Timer",
+        gaugeOfMotion: "SMWorkoutLibrary.UIElement.GaugeOfMotion",
+        holdingPosition: "SMWorkoutLibrary.UIElement.HoldingPosition"
+      };
+      return map[name] || "SMWorkoutLibrary.UIElement.Timer";
+    }
+
+    function kotlinUiElement(name) {
+      const map = {
+        repsCounter: "UiElement.repsCounter",
+        timer: "UiElement.timer",
+        gaugeOfMotion: "UiElement.gaugeOfMotion",
+        holdingPosition: "UiElement.holdingPosition"
+      };
+      return map[name] || "UiElement.timer";
+    }
+
+    function swiftUiElement(name) {
+      const map = {
+        repsCounter: ".repsCounter",
+        timer: ".timer",
+        gaugeOfMotion: ".gaugeOfMotion",
+        holdingPosition: ".holdingPosition"
+      };
+      return map[name] || ".timer";
+    }
+
+    function selectedCodeExercises(config) {
+      return config.exercises.length ? config.exercises : [primaryExercise(config)];
+    }
+
+    function dartExerciseCode(config, exercise, index) {
+      const lines = [
+        "final exercise" + index + " = SMKitExercise( // Builds " + exercise.name + ".",
+        "  detector: " + sourceString(exercise.detector) + ", // Movement detector from the public catalog.",
+        "  prettyName: " + sourceString(exercise.name) + ", // User-facing exercise name.",
+        "  totalSeconds: " + exercise.seconds + ", // Exercise duration.",
+        "  uiElements: [" + exercise.uiElements.map(dartUiElement).join(", ") + "], // UI elements requested by the builder.",
+        "  phonePosition: SMKitPhonePosition." + exercise.phonePosition + ", // Floor or elevated placement."
+      ];
+      if (hasOption(config, "adaptiveRom")) lines.push("  adaptiveRomFeedbackEnabled: true, // Enables adaptive ROM for supported movements.", "  adaptiveRomWarmupReps: 2, // Uses two warmup reps to personalize ROM.");
+      if (hasOption(config, "counterTarget") && exercise.targetReps) lines.push("  targetReps: " + exercise.targetReps + ", // Target repetitions for target-based ending.");
+      lines.push("); // Finishes " + exercise.name + ".");
+      return lines.join("\n");
+    }
+
+    function rnExerciseCode(config, exercise, index) {
+      const lines = [
+        "const exercise" + index + " = new SMWorkoutLibrary.SMExercise( // Builds " + exercise.name + ".",
+        "  " + sourceString(exercise.name) + ", // User-facing name.",
+        "  " + exercise.seconds + ", // Duration in seconds.",
+        "  " + sourceString(exercise.detector + "InstructionVideo") + ", // Instruction asset key.",
+        "  null, // No custom intro audio.",
+        "  [" + exercise.uiElements.map(rnUiElement).join(", ") + "], // UI elements.",
+        "  " + sourceString(exercise.detector) + ", // Movement detector.",
+        "  null, // No closure audio.",
+        "  null, // No scoring params for workout mode.",
+        "  {",
+        "    phonePosition: SMWorkoutLibrary.PhonePosition." + (exercise.phonePosition === "floor" ? "Floor" : "Elevated") + ", // Placement from builder."
+      ];
+      if (hasOption(config, "adaptiveRom")) lines.push("    adaptiveRomFeedbackEnabled: true, // Enables adaptive ROM.", "    adaptiveRomWarmupReps: 2, // Uses two warmup reps.");
+      if (hasOption(config, "counterTarget") && exercise.targetReps) lines.push("    targetReps: " + exercise.targetReps + ", // Target reps.");
+      lines.push("  },", ");");
+      return lines.join("\n");
+    }
+
+    function kotlinExerciseCode(config, exercise, index) {
+      const lines = [
+        "val exercise" + index + " = SMExercise( // Builds " + exercise.name + ".",
+        "  name = " + sourceString(exercise.name) + ",",
+        "  detector = " + sourceString(exercise.detector) + ",",
+        "  totalSeconds = " + exercise.seconds + ",",
+        "  videoInstruction = " + sourceString(exercise.detector + "InstructionVideo") + ",",
+        "  uiElements = setOf(" + exercise.uiElements.map(kotlinUiElement).join(", ") + "),",
+        "  phonePosition = PhonePosition." + (exercise.phonePosition === "floor" ? "Floor" : "Elevated") + ","
+      ];
+      if (hasOption(config, "adaptiveRom")) lines.push("  adaptiveRomFeedbackEnabled = true,", "  adaptiveRomWarmupReps = 2,");
+      lines.push(")");
+      return lines.join("\n");
+    }
+
+    function swiftExerciseCode(config, exercise, index) {
+      const lines = [
+        "let exercise" + index + " = SMExercise( // Builds " + exercise.name + ".",
+        "  name: " + sourceString(exercise.name) + ",",
+        "  exerciseIntro: nil,",
+        "  totalSeconds: " + exercise.seconds + ",",
+        "  videoInstruction: " + sourceString(exercise.detector + "InstructionVideo") + ",",
+        "  uiElements: [" + exercise.uiElements.map(swiftUiElement).join(", ") + "],",
+        "  detector: " + sourceString(exercise.detector) + ",",
+        "  exerciseClosure: nil,",
+        "  phonePosition: ." + (exercise.phonePosition === "floor" ? "Floor" : "Elevated") + ","
+      ];
+      if (hasOption(config, "adaptiveRom")) lines.push("  adaptiveRomFeedbackEnabled: true,", "  adaptiveRomWarmupReps: 2,");
+      lines.push(")");
+      return lines.join("\n");
+    }
+
+    function renderDartSource(config) {
+      const exercises = selectedCodeExercises(config);
+      if (config.kit === "smkitui") {
+        const lines = [
+          "// Generated SMKitUI Flutter integration scaffold.",
+          "final smkit = SmkitUiFlutterPlugin(); // Creates the SMKitUI plugin instance.",
+          "",
+          "await smkit.configure( // Configures SMKitUI before launching a branded flow.",
+          "  key: apiKey, // Supplies your Sency auth key.",
+          "  configureLanguage: SMKitLanguage.english, // Sets configure-time SDK language.",
+          "  poseModelChoice: SmKitPoseModelChoice.adaptiveChoice, // Uses Android adaptive pose model where relevant.",
+          "); // Waits for native configuration."
+        ];
+        const configFields = [];
+        if (hasOption(config, "colorTheme")) configFields.push("    colorTheme: SMKitColorTheme.green, // Applies the demo green theme.");
+        if (hasOption(config, "audioControls")) configFields.push("    playPhoneCalibrationAudio: true,", "    playBodyCalibrationAudio: true,");
+        if (configFields.length) lines.push("", "await smkit.setConfig(", "  config: const SMKitConfig(", ...configFields, "  ),", ");");
+        if (hasOption(config, "phoneMovementPrevention")) lines.push("", "await smkit.setPhoneMovementCountPreventionEnabled(true);");
+        if (hasOption(config, "counterTarget")) lines.push("await smkit.setEndExercisePreferences(endExercisePrefernces: SMKitEndExercisePreferences.targetBased);");
+        if (hasOption(config, "feedbackExclusions")) lines.push("await smkit.setFeedbacksUiToExclude(feedbacks: ['SquatKneesIn', 'SquatBackBent']);");
+        lines.push("", ...exercises.flatMap((exercise, index) => [dartExerciseCode(config, exercise, index), ""]));
+        lines.push("final workout = SMKitWorkout(", "  id: 'generated-workout',", "  name: 'Generated Workout',", "  exercises: [" + exercises.map((_, index) => "exercise" + index).join(", ") + "], // All checked exercises.", ");", "", "await smkit.startCustomizedWorkout(", "  workout: workout,", "  showPhoneCalibration: " + hasOption(config, "phoneCalibration") + ",", ");");
+        return lines.join("\n");
+      }
+      const first = exercises[0];
+      const lines = ["// Generated SMKit Flutter integration scaffold.", "await SmKit.configure(authKey: apiKey, poseModelChoice: SmKitPoseModelChoice.adaptiveChoice);", "", "await SmKit.startSession(", "  viewId: viewId,", "  settings: const SessionSettings(phonePositionType: SmKitPhonePosition." + first.phonePosition + "),", ");"];
+      if (hasOption(config, "adaptiveRom")) lines.push("await SmKit.setAdaptiveRomEnabled(true);");
+      if (hasOption(config, "feedbackExclusions")) lines.push("await SmKit.setFeedbacksToExclude(['SquatKneesIn']);");
+      lines.push("", "for (final detector in [" + exercises.map(exercise => sourceString(exercise.detector)).join(", ") + "]) {", "  await SmKit.startDetection(exercise: detector, guidanceMode: " + hasOption(config, "guidanceMode") + ");", "  await SmKit.stopDetection();", "}");
+      if (hasOption(config, "sessionSummary")) lines.push("final sessionResult = await SmKit.stopSession();");
+      return lines.join("\n");
+    }
+
+    function renderTsxSource(config) {
+      const exercises = selectedCodeExercises(config);
+      if (config.kit === "smkitui") {
+        const lines = ["// Generated SMKitUI React Native integration scaffold.", "await configure(apiKey, SMWorkoutLibrary.Language.English);"];
+        if (hasOption(config, "colorTheme")) lines.push("await setColorTheme(SMWorkoutLibrary.ColorTheme.Green);");
+        if (hasOption(config, "audioControls")) lines.push("await setPlayPhoneCalibrationAudio(true);", "await setPlayBodyCalibrationAudio(true);");
+        if (hasOption(config, "phoneMovementPrevention")) lines.push("await setPhoneMovementCountPreventionEnabled(true);");
+        if (hasOption(config, "feedbackExclusions")) lines.push("await setFeedbacksUIToExclude(['SquatKneesIn', 'SquatBackBent']);");
+        lines.push("", ...exercises.flatMap((exercise, index) => [rnExerciseCode(config, exercise, index), ""]));
+        lines.push("const workout = new SMWorkoutLibrary.SMWorkout(", "  'generated-workout',", "  'Generated Workout',", "  null,", "  null,", "  [" + exercises.map((_, index) => "exercise" + index).join(", ") + "],", "  null,", "  null,", "  null,", ");", "", "await startCustomWorkout(workout, null, " + hasOption(config, "phoneCalibration") + ");");
+        return lines.join("\n");
+      }
+      const first = exercises[0];
+      const lines = ["// Generated SMKit React Native integration scaffold.", "const cameraRef = useRef<SmkitCameraViewRef>(null);", "", "<SmkitCameraView", "  ref={cameraRef}", "  authKey={apiKey}", "  phonePosition=" + sourceString(first.phonePosition === "floor" ? "Floor" : "Elevated"), hasOption(config, "poseSkeletonStream") ? "  onPositionData={(joints) => setSkeletonJoints(joints)}" : "  onPositionData={undefined}", "/>;", "", "cameraRef.current?.startSession();", "for (const detector of [" + exercises.map(exercise => sourceString(exercise.detector)).join(", ") + "]) {", "  cameraRef.current?.startDetection(detector, { guidanceMode: " + hasOption(config, "guidanceMode") + " });", "  cameraRef.current?.stopDetection({ recordExercise: true });", "}"];
+      if (hasOption(config, "sessionSummary")) lines.push("cameraRef.current?.stopSession();");
+      return lines.join("\n");
+    }
+
+    function renderKotlinSource(config) {
+      const exercises = selectedCodeExercises(config);
+      if (config.kit === "smkitui") {
+        const lines = ["// Generated SMKitUI Android integration scaffold.", "val smKitUI = SMKitUI.Configuration(applicationContext)", "  .setUIKey(apiKey)", "  .setPoseModelChoice(PoseModelChoice.AdaptiveChoice)", "  .setColorTheme(UIColorTheme.GREEN)", "  .configure(configurationListener)"];
+        if (hasOption(config, "audioControls")) lines.push("smKitUI.setPlayPhoneCalibrationAudio(true)", "smKitUI.setPlayBodyCalibrationAudio(true)");
+        if (hasOption(config, "phoneMovementPrevention")) lines.push("smKitUI.setPhoneMovementCountPreventionEnabled(true)");
+        if (hasOption(config, "feedbackExclusions")) lines.push("smKitUI.setFeedbacksUIToExclude(setOf(FormFeedbackType.pushupKneesOnFloor))");
+        lines.push("", ...exercises.flatMap((exercise, index) => [kotlinExerciseCode(config, exercise, index), ""]));
+        lines.push("val workout = SMWorkout(", "  id = \"generated-workout\",", "  name = \"Generated Workout\",", "  exercises = listOf(" + exercises.map((_, index) => "exercise" + index).join(", ") + ")", ")", "", "smKitUI.startCustomizedWorkout(workout, workoutListener, showPhoneCalibration = " + hasOption(config, "phoneCalibration") + ")");
+        return lines.join("\n");
+      }
+      const lines = ["// Generated SMKit Android integration scaffold.", "val smKit = SMKit.Builder(applicationContext)", "  .authKey(apiKey)", "  .isUI(false)", "  .poseModelChoice(PoseModelChoice.AdaptiveChoice)", "  .build()", "", "smKit.configure(configurationListener)", "smKit.startSession(lifecycleOwner, preview.surfaceProvider)"];
+      if (hasOption(config, "phoneMovementPrevention")) lines.push("smKit.setPhoneMoved(false)");
+      if (hasOption(config, "adaptiveRom")) lines.push("smKit.setAdaptiveRomEnabled(true)");
+      if (hasOption(config, "feedbackExclusions")) lines.push("smKit.setFeedbacksToExclude(setOf(FormFeedbackType.pushupKneesOnFloor))");
+      exercises.forEach(exercise => lines.push("smKit.startDetection(" + sourceString(exercise.detector) + ", null, " + hasOption(config, "guidanceMode") + ")", "smKit.stopDetection()"));
+      if (hasOption(config, "sessionSummary")) lines.push("val session = smKit.stopSession()");
+      return lines.join("\n");
+    }
+
+    function renderSwiftSource(config) {
+      const exercises = selectedCodeExercises(config);
+      if (config.kit === "smkitui") {
+        const lines = ["// Generated SMKitUI iOS integration scaffold.", "SMKitUIModel.configure(authKey: apiKey, language: .English) {", "  print(\"SMKitUI configured\")", "} onFailure: { error in print(error as Any) }"];
+        if (hasOption(config, "colorTheme")) lines.push("SMKitUIModel.colorTheme = .green");
+        if (hasOption(config, "audioControls")) lines.push("SMKitUIModel.playPhoneCalibrationAudio = true", "SMKitUIModel.playBodyCalibrationAudio = true", "SMKitUIModel.showExternalAudioControl = true");
+        if (hasOption(config, "phoneMovementPrevention")) lines.push("SMKitUIModel.phoneMovementCountPreventionEnabled = true");
+        if (hasOption(config, "feedbackExclusions")) lines.push("SMKitUIModel.setFeedbacksUIToExclude(feedbacksUIToExclude: [.pushupKneesOnFloor])");
+        lines.push("", ...exercises.flatMap((exercise, index) => [swiftExerciseCode(config, exercise, index), ""]));
+        lines.push("let workout = SMWorkout(id: \"generated-workout\", name: \"Generated Workout\", exercises: [" + exercises.map((_, index) => "exercise" + index).join(", ") + "])", "try SMKitUIModel.startWorkout(", "  viewController: self,", "  workout: workout,", "  delegate: self,", "  showPhoneCalibration: " + hasOption(config, "phoneCalibration"), ")");
+        return lines.join("\n");
+      }
+      const first = exercises[0];
+      const lines = ["// Generated SMKit iOS integration scaffold.", "let flow = try SMKitFlowManager(delegate: self)", "let settings = SMKitSessionSettings(phonePosition: ." + (first.phonePosition === "floor" ? "Floor" : "Elevated") + ", autoStartCamera: true)", "flow.startSession(sessionSettings: settings) { result in", "  guard case .success = result else { return }", "}"];
+      if (hasOption(config, "feedbackExclusions")) lines.push("flow.setFeedbacksToExclude(feedbacksToExclude: [.pushupKneesOnFloor])");
+      exercises.forEach(exercise => lines.push("try flow.startDetection(exercise: " + sourceString(exercise.detector) + ", guidanceMode: " + hasOption(config, "guidanceMode") + ")", "let " + exercise.detector.replace(/[^A-Za-z0-9_]/g, "") + "Result = try flow.stopDetection(recordExercise: true)"));
+      if (hasOption(config, "sessionSummary")) lines.push("flow.stopSession { result in print(result) }");
+      return lines.join("\n");
+    }
+
+    function renderExportSource(config) {
+      if (config.platform === "flutter") return renderDartSource(config);
+      if (config.platform === "reactNative") return renderTsxSource(config);
+      if (config.platform === "android") return renderKotlinSource(config);
+      if (config.platform === "ios") return renderSwiftSource(config);
+      return JSON.stringify(config, null, 2);
+    }
+
+    function renderBuilder() {
+      builderKit.innerHTML = builderKits.map(kit => `<option value="${kit.id}" ${kit.id === builderState.kit ? "selected" : ""}>${kit.label}</option>`).join("");
+      builderPlatform.innerHTML = builderPlatforms.map(platform => `<option value="${platform.id}" ${platform.id === builderState.platform ? "selected" : ""}>${platform.label}</option>`).join("");
+      builderPage.innerHTML = builderPages.map(page => `<option value="${page.id}" ${page.id === builderState.page ? "selected" : ""}>${page.label}</option>`).join("");
+
+      const options = featureOptions[builderState.kit][builderState.page];
+      featureOptionGrid.innerHTML = options.map(option => `
+        <label class="check-card">
+          <input type="checkbox" data-builder-option="${escapeHtml(option[0])}" ${builderState.options.has(option[0]) ? "checked" : ""}>
+          <span>
+            ${escapeHtml(option[1])}
+            <small>${escapeHtml(option[2])}</small>
+          </span>
+        </label>
+      `).join("");
+
+      exerciseGrid.innerHTML = exerciseCatalog.map(exercise => `
+        <label class="check-card">
+          <input type="checkbox" data-builder-exercise="${escapeHtml(exercise.id)}" ${builderState.exercises.has(exercise.id) ? "checked" : ""}>
+          <span>
+            ${escapeHtml(exercise.label)}
+            <small>${escapeHtml(exercise.detector)}</small>
+          </span>
+        </label>
+      `).join("");
+
+      const config = buildExportConfig();
+      builderSummary.textContent = `${selectedExercises().length} exercises selected · ${selectedBuilderOptions().length} options enabled · ${config.entryPoint}`;
+      builderPreview.textContent = renderExportSource(config);
+      builderPreview.parentElement.scrollTop = 0;
+    }
+
+    function syncBuilderOptionsFromInputs() {
+      builderState.options = new Set(
+        [...featureOptionGrid.querySelectorAll("[data-builder-option]:checked")]
+          .map(input => input.dataset.builderOption)
+      );
+      renderBuilder();
+    }
+
+    function syncBuilderExercisesFromInputs() {
+      builderState.exercises = new Set(
+        [...exerciseGrid.querySelectorAll("[data-builder-exercise]:checked")]
+          .map(input => input.dataset.builderExercise)
+      );
+      renderBuilder();
+    }
+
+    function applyFilters() {
+      document.querySelectorAll(".sdk-section").forEach(section => {
+        const showSection = state.kit === "all" || section.dataset.kit === state.kit;
+        const cards = [...section.querySelectorAll(".config-card")];
+        cards.forEach(card => {
+          card.classList.toggle("hidden", !showSection || (state.page !== "all" && card.dataset.page !== state.page));
+        });
+        section.classList.toggle("hidden", !showSection || !visibleCards(section).length);
+      });
+    }
+
+    function renderNav() {
+      const builderGroup = `
+        <div class="nav-group">
+          <p class="nav-heading">Configuration Builder</p>
+          <a href="#config-builder" data-nav-id="config-builder">Build integration file</a>
+        </div>
+      `;
+
+      const groups = visibleSections().map(section => {
+        const title = section.querySelector("h2")?.textContent || section.id;
+        const cards = visibleCards(section);
+        if (!cards.length) return "";
+        return `
+          <div class="nav-group">
+            <p class="nav-heading">${escapeHtml(title)}</p>
+            ${cards.map(card => `
+              <a href="#${escapeHtml(card.id)}" data-nav-id="${escapeHtml(card.id)}">${escapeHtml(card.querySelector("h3")?.textContent || card.id)}</a>
+            `).join("")}
+          </div>
+        `;
+      }).join("");
+
+      sideNav.innerHTML = `${builderGroup}${groups || `<p class="lede">No matching demo pages.</p>`}`;
+    }
+
+    function visibleNavTargets() {
+      return [
+        document.getElementById("config-builder"),
+        ...visibleSections().flatMap(visibleCards)
+      ].filter(Boolean);
+    }
+
+    function setActiveNav() {
+      const cards = visibleNavTargets();
+      if (!cards.length) return;
+      const line = content.getBoundingClientRect().top + Math.min(180, content.clientHeight * 0.25);
+      let active = cards[0];
+      for (const card of cards) {
+        if (card.getBoundingClientRect().top <= line) active = card;
+      }
+      state.activeId = active.id;
+      sideNav.querySelectorAll("a").forEach(link => {
+        link.classList.toggle("active", link.dataset.navId === state.activeId);
+      });
+    }
+
+    function render() {
+      renderTabs();
+      syncMainOrder();
+      applyFilters();
+      renderNav();
+      setActiveNav();
+      renderBuilder();
+    }
+
+    kitTabs.addEventListener("click", event => {
+      const button = event.target.closest("[data-kit]");
+      if (!button) return;
+      state.kit = button.dataset.kit;
+      render();
+      content.scrollTop = 0;
+    });
+
+    pageTabs.addEventListener("click", event => {
+      const button = event.target.closest("[data-page]");
+      if (!button) return;
+      state.page = button.dataset.page;
+      render();
+      content.scrollTop = 0;
+    });
+
+    sideNav.addEventListener("click", event => {
+      const link = event.target.closest("[data-nav-id]");
+      if (!link) return;
+      event.preventDefault();
+      document.getElementById(link.dataset.navId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    content.addEventListener("scroll", setActiveNav, { passive: true });
+
+    builderKit.addEventListener("change", event => {
+      builderState.kit = event.target.value;
+      const available = featureOptions[builderState.kit][builderState.page].map(option => option[0]);
+      builderState.options = new Set([...builderState.options].filter(option => available.includes(option)));
+      if (!builderState.options.size) {
+        available.slice(0, 3).forEach(option => builderState.options.add(option));
+      }
+      renderBuilder();
+    });
+
+    builderPlatform.addEventListener("change", event => {
+      builderState.platform = event.target.value;
+      renderBuilder();
+    });
+
+    builderPage.addEventListener("change", event => {
+      builderState.page = event.target.value;
+      const available = featureOptions[builderState.kit][builderState.page].map(option => option[0]);
+      builderState.options = new Set([...builderState.options].filter(option => available.includes(option)));
+      if (!builderState.options.size) {
+        available.slice(0, 3).forEach(option => builderState.options.add(option));
+      }
+      renderBuilder();
+    });
+
+    featureOptionGrid.addEventListener("change", syncBuilderOptionsFromInputs);
+    featureOptionGrid.addEventListener("click", event => {
+      if (!event.target.closest("[data-builder-option]")) return;
+      requestAnimationFrame(syncBuilderOptionsFromInputs);
+    });
+
+    exerciseGrid.addEventListener("change", syncBuilderExercisesFromInputs);
+    exerciseGrid.addEventListener("click", event => {
+      if (!event.target.closest("[data-builder-exercise]")) return;
+      requestAnimationFrame(syncBuilderExercisesFromInputs);
+    });
+
+    exportConfig.addEventListener("click", () => {
+      const config = buildExportConfig();
+      const fileName = sourceFileName(config);
+      const blob = new Blob([renderExportSource(config)], { type: sourceMimeType(config) });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    render();
+  </script>
+</body>
+</html>
