@@ -469,7 +469,7 @@
           <div class="builder-header">
             <div>
               <h2>Configuration Builder</h2>
-              <p class="lede">Choose a demo flow, enable SDK features, select exercises, and export a reusable integration config file.</p>
+              <p class="lede">Choose a demo flow, enable SDK features, select exercises, and export a reusable integration file.</p>
             </div>
           </div>
 
@@ -526,7 +526,6 @@ smkit.startAssessment( // Starts a branded built-in assessment flow.
     'birthday': DateTime(1990, 1, 1).millisecondsSinceEpoch, // Sends birthday as milliseconds.
   }, // Finishes user data.
   showSummary: true, // Shows the branded summary screen at the end.
-  modifications: currentModifications, // Applies optional detector or feedback parameter overrides.
   onHandle: handleStatus, // Receives status, result, and error callbacks from native code.
 ); // Launches the assessment.</code></pre>
           </article>
@@ -537,13 +536,12 @@ smkit.startAssessment( // Starts a branded built-in assessment flow.
             <ul>
               <li>Workout-level fields define name, intro, soundtrack, exercises, and closure.</li>
               <li>Each exercise carries detector, duration, instruction asset, UI elements, and options.</li>
-              <li>Parameter modifications can be passed with the workout start call.</li>
+              <li>Use the same start path for demo-built workouts and production workout definitions.</li>
             </ul>
             <pre><code>final workout = await getDemoWorkout(); // Builds the demo SMKitWorkout from the local workout builder.
 await settings.applyTo(smkit); // Applies demo-wide SDK/UI settings before presentation.
 smkit.startCustomizedWorkout( // Starts the branded custom workout flow.
   workout: workout, // Passes the configured workout model.
-  modifications: currentModifications, // Applies optional per-detector parameter overrides.
   onHandle: handleStatus, // Receives workout lifecycle and summary callbacks.
 ); // Presents SMKitUI.</code></pre>
           </article>
@@ -579,7 +577,7 @@ smkit.startCustomizedWorkout( // Starts the branded custom workout flow.
             <ul>
               <li>The demo exposes Fitness, Cardio, Strength, and Custom assessment options.</li>
               <li>`showSummary` controls the summary screen.</li>
-              <li>Settings and parameter modifications are applied before the launch call.</li>
+              <li>Settings are applied before the launch call.</li>
             </ul>
             <pre><code>await applyDemoSettings(settings); // Applies the demo's theme, audio, and runtime settings.
 const result = await startAssessment( // Starts a built-in branded assessment.
@@ -587,8 +585,7 @@ const result = await startAssessment( // Starts a built-in branded assessment.
   true, // Shows the summary screen.
   null, // Lets the SDK collect user data if needed.
   false, // Does not force user data collection.
-  '', // Uses no custom assessment id.
-  buildModifications(settings), // Sends optional detector or feedback parameter overrides.
+  '' // Uses no custom assessment id.
 ); // Waits for the result payload.
 showSummaryModal(result.summary); // Displays the returned summary in the demo.</code></pre>
           </article>
@@ -612,8 +609,7 @@ showSummaryModal(result.summary); // Displays the returned summary in the demo.<
   null, // Uses default get-in-frame copy.
 ); // Finishes workout creation.
 const result = await startCustomWorkout( // Starts the branded workout.
-  workout, // Passes the configured workout.
-  buildModifications(settings), // Applies optional parameter modifications.
+  workout // Passes the configured workout.
 ); // Waits for the native result.</code></pre>
           </article>
 
@@ -651,20 +647,18 @@ const result = await startCustomWorkout( // Starts the branded workout.
 
           <article class="config-card" data-page="assessment" id="smkitui-android-assessment">
             <h3>Assessment Demo Configuration</h3>
-            <p>Use `startAssessment` with an assessment type, listener, user data, optional modifications, and phone calibration behavior.</p>
+            <p>Use `startAssessment` with an assessment type, listener, user data, and phone calibration behavior.</p>
             <ul>
               <li>The demo starts the Fitness assessment from the main screen.</li>
               <li>`SMKitUIWorkoutListener` receives errors, summary, exit, and per-exercise data.</li>
-              <li>Parameter modifications are passed as JSON when needed.</li>
+              <li>Phone calibration can be shown before the assessment flow.</li>
             </ul>
             <pre><code>applyBasicSettingsToSdk() // Applies demo settings before launching the flow.
-val modifications = getExampleModificationsJson() // Builds optional detector/feedback overrides.
-smKitUI?.startAssessment( // Starts the built-in assessment.
+	smKitUI?.startAssessment( // Starts the built-in assessment.
   assessmentType = Fitness, // Selects the Fitness assessment type.
   listener = this, // Receives workout and assessment callbacks.
   userData = UserData(14, Gender.Male), // Supplies demo user data.
-  showSummary = true, // Shows the summary screen.
-  modifications = modifications, // Applies parameter modifications.
+	  showSummary = true, // Shows the summary screen.
   showPhoneCalibration = true // Shows phone placement calibration before the flow.
 ) // Launches SMKitUI.</code></pre>
           </article>
@@ -689,8 +683,7 @@ smKitUI?.startAssessment( // Starts the built-in assessment.
 ) // Finishes workout configuration.
 smKitUI?.startCustomizedWorkout( // Starts the branded workout.
   workout, // Passes the configured workout.
-  listener = this, // Receives lifecycle callbacks.
-  modifications = getExampleModificationsJson(), // Applies optional parameter overrides.
+	  listener = this, // Receives lifecycle callbacks.
   showPhoneCalibration = true // Shows phone calibration before the workout.
 ) // Launches the workout.</code></pre>
           </article>
@@ -955,15 +948,14 @@ viewModel.stopSession() // Ends the workout session.</code></pre>
 
           <article class="config-card" data-page="exercise" id="smkit-android-exercise">
             <h3>Exercise Demo Configuration</h3>
-            <p>Exercise configuration is the detector name plus native session options and optional config string/guidance mode.</p>
+            <p>Exercise configuration is the detector name plus native session options and optional guidance mode.</p>
             <ul>
-              <li>Use `startDetection(exerciseName, configString, guidanceMode)` through the SDK/view model.</li>
+              <li>Use `startDetection(exerciseName, guidanceMode)` through the SDK/view model.</li>
               <li>Use listener callbacks for detection data, position data, errors, and camera readiness.</li>
               <li>Use `PoseModelChoice.AdaptiveChoice` during configure when following the current demo setup.</li>
             </ul>
             <pre><code>smKit.startDetection( // Starts one Android detector.
   exercise = "SquatRegular", // Selects the movement detector.
-  configString = null, // Uses default detector parameters.
   guidanceMode = null // Lets default guidance policy decide.
 ) // Begins exercise detection.
 smKit.smKitSessionListener(sessionListener) // Receives movement and pose callbacks.</code></pre>
@@ -1275,7 +1267,7 @@ flowManager?.startSession(sessionSettings: settings) { result in // Starts camer
         integrationNotes: [
           builderState.kit === "smkitui" ? "Use this config to build branded SMKitUI assessment/workout/exercise models." : "Use this config in your host app; SMKit does not present branded assessment/workout screens.",
           "Map detector names to the public movement catalog before shipping.",
-          "Keep parameter modification values versioned with the SDK version you test against."
+          "Keep generated demo files aligned with the SDK version you test against."
         ]
       };
       config.generatedSnippet = generatedSnippet(config);
