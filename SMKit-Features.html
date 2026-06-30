@@ -1984,6 +1984,22 @@
                         }
                   },
                   {
+                        "id": "parameter-modifications",
+                        "title": "Parameter Modifications",
+                        "category": "customization",
+                        "tags": [
+                              "advanced",
+                              "customization",
+                              "parameters"
+                        ],
+                        "description": "Some integrations can use advanced parameter modifications for product-specific behavior. Contact us for more information about supported modification options and recommended usage.",
+                        "details": [
+                              "Modification options can affect detector behavior, feedback behavior, and session experience, so they should be reviewed with the Sency team before being used in production.",
+                              "Share the SDK platform, version, target movements, and desired behavior when requesting guidance."
+                        ],
+                        "code": {}
+                  },
+                  {
                         "id": "camera-options",
                         "title": "Camera Options",
                         "category": "core",
@@ -3063,6 +3079,22 @@
                         ]
                   },
                   {
+                        "id": "ui-parameter-modifications",
+                        "title": "Parameter Modifications",
+                        "category": "customization",
+                        "tags": [
+                              "advanced",
+                              "customization",
+                              "parameters"
+                        ],
+                        "description": "Some integrations can use advanced parameter modifications for product-specific behavior. Contact us for more information about supported modification options and recommended usage.",
+                        "details": [
+                              "Modification options can affect detector behavior, feedback behavior, and workout experience, so they should be reviewed with the Sency team before being used in production.",
+                              "Share the SDK platform, version, target movements, and desired behavior when requesting guidance."
+                        ],
+                        "code": {}
+                  },
+                  {
                         "id": "ui-feedback-exclusion-controls",
                         "title": "Feedback Exclusion Controls",
                         "category": "customization",
@@ -3581,6 +3613,7 @@
       const hasOptions = Boolean(feature.options?.length);
       const platform = activePlatform();
       const code = feature.code[state.platform] || "";
+      const hasCode = code.trim().length > 0;
       const note = feature.notes?.[state.platform];
       const optionsSection = hasOptions ? `
         <h3 class="doc-section-title">Options</h3>
@@ -3608,6 +3641,16 @@
           </video>
         </div>
       ` : "";
+      const codeSection = hasCode ? `
+          <h3 class="doc-section-title">${escapeHtml(platform.label)} code</h3>
+          <div class="doc-code-card">
+            <div class="doc-code-meta">
+              <span>${escapeHtml(platform.label)} example</span>
+              <button class="copy-button" type="button" data-copy-feature="${escapeHtml(feature.id)}">Copy</button>
+            </div>
+            <pre><code class="language-${escapeHtml(platform.language)}">${escapeHtml(code)}</code></pre>
+          </div>
+      ` : "";
 
       return `
         <article class="doc-feature" id="${feature.id}" data-feature-id="${feature.id}">
@@ -3620,14 +3663,7 @@
           ${detailsSection}
           ${optionsSection}
           ${mediaSection}
-          <h3 class="doc-section-title">${escapeHtml(platform.label)} code</h3>
-          <div class="doc-code-card">
-            <div class="doc-code-meta">
-              <span>${escapeHtml(platform.label)} example</span>
-              <button class="copy-button" type="button" data-copy-feature="${escapeHtml(feature.id)}">Copy</button>
-            </div>
-            <pre><code class="language-${escapeHtml(platform.language)}">${escapeHtml(code)}</code></pre>
-          </div>
+          ${codeSection}
           ${note ? `<p class="doc-note">${escapeHtml(note)}</p>` : ""}
         </article>
       `;
